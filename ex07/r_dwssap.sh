@@ -1,0 +1,1 @@
+cat /etc/passwd | tail -n +11 | awk "(NR+1)%2" | awk -F : '{print $1}' | rev | sort -r | head -n $FT_LINE2 | tail -n +$FT_LINE1 |  tr '\n' ',' | sed 's/,/, /g' | sed 's/, $/./g'
