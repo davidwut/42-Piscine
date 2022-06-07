@@ -1,1 +1,2 @@
-git rev-parse HEAD | head -n 5
+#!/bin/bash
+git log -5 --pretty=format:"%H"
