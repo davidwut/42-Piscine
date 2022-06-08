@@ -64,13 +64,18 @@ void	ft_print_combn(int n)
 	}
 	tempn = n;
 	i = 0;
-	while (--tempn && x[tempn - 1] <= 9 - 0)
+	while (tempn)
 	{
-		x[tempn - 1]++;
-		if (match(x, n))
+		while (x[tempn - 1] <= 9 - i)
 		{
-			ft_putnbr(x, n);
+			x[tempn - 1]++;
+			if (match(x, n))
+			{
+				ft_putnbr(x, n);
+			}
 		}
+		tempn--;
+		i++;
 	}
 }
 
