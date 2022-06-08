@@ -12,15 +12,26 @@
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putint(int x)
+void	putnum(int x, int y, int z)
 {
-	x += '0';
-	write(1, &x, 1);
+	putchar(x + '0');
+	putchar(y + '0');
+	putchar(z + '0');
+}
+
+void	putformat(int x, int y, int z)
+{
+	putnum(x, y, z);
+	if (!(x == 7 && y == 8 && z == 9))
+	{
+		putchar(',');
+		putchar(' ');
+	}
 }
 
 void	ft_print_comb(void)
@@ -30,25 +41,23 @@ void	ft_print_comb(void)
 	int	c;
 
 	a = 0;
-	b = 1;
-	c = 2;
-	while (++a <= 7)
+	while (a <= 7)
 	{
-		while (++b <= 8)
+		b = a + 1;
+		while (b <= 8)
 		{
-			while (++c <= 9)
+			c = b + 1;
+			while (c <= 9)
 			{
 				if (a != b && a != c && b != c)
 				{
-					ft_putint(a);
-					ft_putint(b);
-					ft_putint(c);
-					ft_putchar(',');
+					putformat(a, b, c);
 				}
+				c++;
 			}
-			c = 2;
+			b++;
 		}
-		b = 1;
+		a++;
 	}
 }
 
