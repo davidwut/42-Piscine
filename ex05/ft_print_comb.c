@@ -32,11 +32,11 @@ void	ft_print_comb(void)
 	a = 0;
 	b = 1;
 	c = 2;
-	while (a <= 7)
+	while (++a <= 7)
 	{
-		while (b <= 8)
+		while (++b <= 8)
 		{
-			while (c <= 9)
+			while (++c <= 9)
 			{
 				if (a != b && a != c && b != c)
 				{
@@ -45,13 +45,10 @@ void	ft_print_comb(void)
 					ft_putint(c);
 					ft_putchar(',');
 				}
-				c++;
 			}
 			c = 2;
-			b++;
 		}
 		b = 1;
-		a++;
 	}
 }
 
