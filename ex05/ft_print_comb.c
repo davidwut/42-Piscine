@@ -19,7 +19,7 @@ void	ft_putchar(char c)
 
 void	ft_putint(int x)
 {
-	x += 48;
+	x += '0';
 	write(1, &x, 1);
 }
 
