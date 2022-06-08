@@ -16,8 +16,8 @@ void	ft_print_numbers(void)
 {
 	int	i;
 
-	i = 48;
-	while (i < 48 + 10)
+	i = '0';
+	while (i < '0' + 10)
 	{
 		write(1, &i, 1);
 		i++;

@@ -16,8 +16,8 @@ void	ft_print_reverse_alphabet(void)
 {
 	int	i;
 
-	i = 122;
-	while (i > 122 - 26)
+	i = 'z';
+	while (i > 'z' - 26)
 	{
 		write(1, &i, 1);
 		i--;

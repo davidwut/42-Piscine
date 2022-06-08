@@ -16,8 +16,8 @@ void	ft_print_alphabet(void)
 {
 	int	i;
 
-	i = 97;
-	while (i < 97 + 26)
+	i = 'a';
+	while (i < 'a' + 26)
 	{
 		write(1, &i, 1);
 		i++;
