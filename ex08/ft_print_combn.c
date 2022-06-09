@@ -58,28 +58,26 @@ int	match(int *arr, int n)
 void	ft_print_combn(int n)
 {
 	int	x[10];
-	int	tempn;
+	int	ptr;
 	int	i;
 
-	tempn = 0;
-	while (++tempn <= n)
-	{
-		x[tempn - 1] = tempn - 1;
-	}
-	tempn = n;
+	ptr = 0;
+	while (++ptr <= n)
+		x[ptr - 1] = ptr - 1;
+	ptr = n - 1;
 	i = 0;
-	while (tempn)
+	while (ptr >= 0)
 	{
-		while (x[tempn - 1] < 9 - i)
+		if (!ptr)
+			x[ptr] = x[ptr - 1] + 1;
+		while (x[ptr] < 9 - i)
 		{
-			x[tempn - 1]++;
 			if (match(x, n))
-			{
 				ft_putnbr(x, n);
-			}
+			x[ptr]++;
 		}
-		x[tempn - 1] = 0;
-		tempn--;
+		x[ptr] = 0;
+		ptr--;
 		i++;
 	}
 }
