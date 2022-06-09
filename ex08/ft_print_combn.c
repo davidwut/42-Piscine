@@ -17,7 +17,7 @@ void	putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int *x, int n)
+void	putformat(int *x, int n)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ void	ft_putnbr(int *x, int n)
 	putchar(' ');
 }
 
-int	match(int *arr, int n)
+void	match_and_print(int *arr, int n)
 {
 	int	i;
 	int	flags[10];
@@ -47,38 +47,36 @@ int	match(int *arr, int n)
 	{
 		flags[arr[i]]++;
 		if (flags[arr[i]] > 1)
-		{
-			return (0);
-		}
+			return ;
 		i++;
 	}
-	return (1);
+	putformat(arr, n);
 }
 
 void	ft_print_combn(int n)
 {
 	int	x[10];
-	int	ptr;
 	int	i;
 
-	ptr = 0;
-	while (++ptr <= n)
-		x[ptr - 1] = ptr - 1;
-	ptr = n - 1;
+	x[0] = 0;
 	i = 0;
-	while (ptr >= 0)
+	while (x[0] <= 10 - n)
 	{
-		if (!ptr)
-			x[ptr] = x[ptr - 1] + 1;
-		while (x[ptr] < 9 - i)
+		while (i < n)
 		{
-			if (match(x, n))
-				ft_putnbr(x, n);
-			x[ptr]++;
+			if (i)
+				x[i] = x[i - 1] + 1;
+			i++;
 		}
-		x[ptr] = 0;
-		ptr--;
-		i++;
+		i--;
+		while (x[i] <= 10 - n + i)
+		{
+			match_and_print(x, n);
+			x[i]++;
+		}
+		if (i)
+			x[i - 1]++;
+			i--;
 	}
 }
 
@@ -86,7 +84,7 @@ void	ft_print_combn(int n)
 
 int	main(void)
 {
-	ft_print_combn(2);
+	ft_print_combn(3);
 	return (0);
 }
 
