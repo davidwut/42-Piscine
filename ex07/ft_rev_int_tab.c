@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:36:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/09 19:11:37 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/09 19:14:16 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap(int *a, int *b)
 
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= (i / 2) + 1)
