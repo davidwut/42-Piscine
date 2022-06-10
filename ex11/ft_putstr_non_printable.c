@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 14:20:50 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/10 14:40:14 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:04:40 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ void	ft_putchar(char c)
 
 void	ft_puthex(char c)
 {
-	char *hex = "0123456789abcdef";
+	char *hex;
+
+	hex = "0123456789abcdef";
+	ft_putchar('\\');
+	ft_putchar(hex[c / 16]);
+	ft_putchar(hex[c % 16]);
 }
 
 void	ft_putstr_non_printable(char *str)
