@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 12:37:59 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/10 12:44:00 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/10 13:08:54 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strupcase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (ex07_ft_str_is_lowercase(str[i]))
+		if (ex07_ft_str_is_lowercase(&str[i]))
 			str[i] += offset;
 		i++;
 	}
