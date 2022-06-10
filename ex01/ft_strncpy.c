@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/10 11:04:39 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/10 12:19:49 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/10 11:42:43 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/10 12:19:01 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i] != '\0' && i < n)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
