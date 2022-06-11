@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/11 14:28:28 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/11 15:13:21 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/11 15:09:09 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/11 15:12:56 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dst, char *src, unsigned int n)
 {
 	unsigned int	i;
+	int	dst_size;
 
+	dst_size = 0;
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	while (dst[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-		{
-			if (s1[i] < s2[i])
-			{
-				return (-1);
-			}
-			else
-			{
-				return (1);
-			}
-		}
+		dst_size++;
 		i++;
 	}
-	return (0);
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dst[dst_size + i] = src[i];
+		i++;
+	}
+	dst[dst_size + i] = '\0';
+	return (dst);
 }
