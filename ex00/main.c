@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   Bheight: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/11 10:33:03 bheight dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/11 11:39:57 bheight dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/11 18:06:48 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/11 18:08:21 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ void	rush(int width, int height)
 int	main(void)
 {
 	rush(4, 4);
-	return (1);
+	return (0);
 }
