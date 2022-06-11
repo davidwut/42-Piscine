@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
+/*   Bheight: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/11 10:33:03 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/11 11:39:57 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/11 10:33:03 bheight dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/11 11:39:57 bheight dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,21 @@ void	print_line_formatted(int length, char a, char b, char c)
 	ft_putchar('\n');
 }
 
-void	rush(int x, int y)
+void	rush(int width, int height)
 {
 	int	i;
 
-	if (x <= 0 || y <= 0)
+	if (width <= 0 || height <= 0)
 		return ;
-	print_line_formatted(x, 'A', 'B', 'C');
+	print_line_formatted(width, 'A', 'B', 'C');
 	i = 0;
-	while (i < y - 2)
+	while (i < height - 2)
 	{
-		print_line_formatted(x, 'B', ' ', 'B');
+		print_line_formatted(width, 'B', ' ', 'B');
 		i++;
 	}
-	if (y > 1)
-		print_line_formatted(x, 'C', 'B', 'A');
+	if (height > 1)
+		print_line_formatted(width, 'C', 'B', 'A');
 }
 
 int	main(void)
