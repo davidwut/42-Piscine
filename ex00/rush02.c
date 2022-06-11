@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush04.c                                           :+:      :+:    :+:   */
+/*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 10:33:09 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/11 18:16:22 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:18:41 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	rush(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return ;
-	print_line_formatted(width, 'A', 'B', 'C');
+	print_line_formatted(width, 'A', 'B', 'A');
 	i = 0;
 	while (i < height - 2)
 	{
@@ -47,5 +47,5 @@ void	rush(int width, int height)
 		i++;
 	}
 	if (height > 1)
-		print_line_formatted(width, 'C', 'B', 'A');
+		print_line_formatted(width, 'C', 'B', 'C');
 }
