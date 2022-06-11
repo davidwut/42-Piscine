@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 10:33:03 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/11 11:07:24 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:34:32 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_line_formatted(int length, char a, char b, char c)
 
 	ft_putchar(a);
 	i = 0;
-	while (i < length - 1)
+	while (i < length - 2)
 	{
 		ft_putchar(b);
 		i++;
@@ -35,19 +35,23 @@ void	print_line_formatted(int length, char a, char b, char c)
 
 void	rush(int x, int y)
 {
-	if (!x || !y)
+	int	i;
+
+	if (x <= 0 || y <= 0)
 		return ;
 	print_line_formatted(x, 'A', 'B', 'C');
-	while (y > 1)
+	i = 0;
+	while (i < y - 2)
 	{
 		print_line_formatted(x, 'B', ' ', 'B');
-		y--;
+		i++;
 	}
-	print_line_formatted(x, 'C', 'B', 'A');
+	if (y > 1)
+		print_line_formatted(x, 'C', 'B', 'A');
 }
 
 int	main(void)
 {
-	rush(5, 5);
+	rush(4, 4);
 	return (1);
 }
