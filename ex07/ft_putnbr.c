@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:26:25 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/08 16:26:30 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:03:31 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,16 @@ void	putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	int	sigfig;
-
-	sigfig = 1000000000;
-	if (!nb)
+	if (nb < 0)
 	{
-		putchar('0');
+		putchar('-');
+		nb *= -1;
 	}
-	else
+	if (nb > 9)
 	{
-		if (nb < 0)
-		{
-			putchar('-');
-			nb *= -1;
-		}
-		while (sigfig > nb)
-		{
-			sigfig /= 10;
-		}
-		while (sigfig)
-		{
-			putchar(((nb / sigfig) % 10) + '0');
-			sigfig /= 10;
-		}
+		ft_putnbr(nb / 10);
 	}
+	putchar(nb % 10 + '0');
 }
 
 #ifdef og
