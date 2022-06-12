@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:42:05 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 17:33:03 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:48:43 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putnbr_base(int n, char *base)
 
 	while (base[i] != '\0')
 		i++;
-	baselen = 1;
+	baselen = i;
 	i = 0;
 	if (n < 0)
 	{
