@@ -6,16 +6,11 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 10:33:09 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/11 18:16:22 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/12 11:19:57 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	print_line_formatted(int length, char a, char b, char c)
 {
