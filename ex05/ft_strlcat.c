@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 18:51:18 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 14:30:29 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:22:04 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ unsigned int	ft_strlen(char *str)
 	return (i);
 }
 
-unsigned int	ft_strncat(char *dst, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	dst_len;
