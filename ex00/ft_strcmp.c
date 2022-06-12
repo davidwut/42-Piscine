@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:15:34 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 13:37:05 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:08:27 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,7 @@ int	ft_strcmp(char *s1, char *s2)
 		if (s1[i] != s2[i])
 		{
 			if (s1[i] < s2[i])
-			{
-				return (1);
-			}
-			else
-			{
-				return (-1);
-			}
+				return (s1[i] - s2[i]);
 		}
 		i++;
 	}
