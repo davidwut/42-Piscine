@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 18:51:18 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 15:22:04 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:36:32 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
 
 	dst_len = ft_strlen(dst);
 	i = 0;
-	while (src[i] != '\0' && i < size - dst_len - 1)
+	if (dst_len >= size)
+		return (size + ft_strlen(src));
+	while (src[i] != '\0' && dst_len < size - dst_len - 1)
 	{
 		dst[dst_len + i] = src[i];
 		i++;
 	}
-	dst[dst_len + i] = '\0';
+	dst[dst_len + 1] = '\0';
 	return (dst_len + ft_strlen(src));
 }
