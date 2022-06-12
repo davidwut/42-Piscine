@@ -6,16 +6,16 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 12:54:13 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 12:55:17 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:40:53 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	return i;
+	return (i);
 }
