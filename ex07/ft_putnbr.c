@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:26:25 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 15:03:31 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:10:02 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_putnbr(int nb)
 	}
 	putchar(nb % 10 + '0');
 }
+
 
 #ifdef og
 
