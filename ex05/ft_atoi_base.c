@@ -55,6 +55,7 @@ int	is_base_incorrect(char *base)
 				return (1);
 			j++;
 		}
+		i++;
 	}
 	return (0);
 }
@@ -67,7 +68,7 @@ int convert_num(char c, char *str)
     while (str[i])
     {
         if (str[i] == c)
-            return (i);
+    		return (i);
         i++;
     }
     return (-1);
@@ -78,30 +79,24 @@ int	ft_atoi_base(char *str, char *base)
 	int	res;
 	int	i;
 	int	neg;
-	int	baselen;
-        int ret;
+    int	ret;
 
 	res = 0;
 	i = 0;
 	neg = 1;
-        baselen = strlen(base);
 	if (is_base_incorrect(base))
 		return (0);
 	while (isspace(str[i]))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			neg *= -1;
-		i++;
-	}
 	while (str[i])
 	{
-ret = convert_num(str[i], base);
-if (ret = -1)
-    return (0);
-		res = res * baselen + ret;
-i++;
+		ret = convert_num(str[i++], base);
+		if (ret = -1)
+    		return (0);
+		res = res * strlen(base) + ret;
 	}
 	return (res * neg);
 }
