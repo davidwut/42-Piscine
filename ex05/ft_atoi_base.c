@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:37:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/13 11:11:54 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:39:15 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft5_isspace(char c)
 
 int	ft5_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -38,8 +38,9 @@ int	ft5_strlen(char *str)
 
 int	is_base_incorrect(char *base)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
+
 	if (!ft5_strlen(base) || ft5_strlen(base) == 1)
 		return (1);
 	i = 0;
@@ -61,9 +62,9 @@ int	is_base_incorrect(char *base)
 int	ft_atoi_base(char *str, char *base)
 {
 	int	res;
-	int i;
-	int neg;
-	int baselen;
+	int	i;
+	int	neg;
+	int	baselen;
 
 	res = 0;
 	i = 0;
