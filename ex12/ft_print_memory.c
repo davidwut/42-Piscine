@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:06:29 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/13 14:22:26 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:33:24 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,40 @@ void	print_mem(unsigned char *addr, unsigned int size)
 	}
 }
 
+void	print_data(unsigned char *addr, unsigned int size)
+{
+	int i;
+
+	i = 0;
+	while (i < size)
+	{
+		if ((' ' <= addr[i] && addr[i] <= '~'))
+			ft_putchar(addr[i]);
+		else
+			ft_putchar('.');
+		i++;
+	}
+}
+
 void	*ft_print_memory(void *addr, unsigned int size)
 {
 	int i;
+	int sz;
 	unsigned char *c;
 
 	i = 0;
 	c = (unsigned char*) addr;
 	while (i * 16 < size)
 	{
+		if (size - i * 16 < 16)
+			sz = size - i * 16;
+		else
+			sz = 16;
 		print_addr((unsigned long long)c);
 		ft_putchar(':');
-		print_mem(c, 16);
-		print_data(c, 16);
+		print_mem(c, sz);
+		ft_putchar(' ');
+		print_data(c, sz);
 		ft_putchar('\n');
 		c += 16;
 		i++;
