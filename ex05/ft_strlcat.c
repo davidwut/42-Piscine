@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 18:51:18 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 16:49:31 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/13 09:57:51 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ unsigned int	ft_strlen(char *str)
 	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 		i++;
 	return (i);
 }
@@ -23,17 +23,25 @@ unsigned int	ft_strlen(char *str)
 unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
 {
 	unsigned int	i;
+	unsigned int	j;
 	unsigned int	dst_len;
+	unsigned int	src_len;
 
-	dst_len = ft_strlen(dst);
-	i = 0;
-	if (dst_len >= size)
-		return (size + ft_strlen(src));
-	while (src[i] != '\0' && dst_len < size - dst_len - 1)
+	i = ft_strlen(dst);
+	j = 0;
+	dst_len = i;
+	src_len = ft_strlen(src);
+	if (size < 1)
+		return (size + src_len);
+	while (src[j] && i < size - 1)
 	{
-		dst[dst_len + i] = src[i];
+		dst[i] = src[j];
 		i++;
+		j++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + ft_strlen(src));
+	dst[i] = '\0';
+	if (size < dst_len)
+		return (size + src_len);
+	else
+		return (dst_len + src_len);
 }
