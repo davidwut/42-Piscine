@@ -6,19 +6,14 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 12:58:36 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 12:58:40 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:25:38 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_pustr(char *str)
+void	ft_putstr(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i++], 1);
-	}
+	while (*str)
+		write(1, str++, 1);
 }
