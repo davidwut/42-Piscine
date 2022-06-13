@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:20:02 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/08 17:20:04 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:09:55 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,10 @@ void	ft_print_combn(int n)
 	i = 0;
 	while (++i <= n)
 		x[i - 1] = i - 1;
-	while (x[0] <= 10 - n)
+	while (x[0] <= 10 - n && x[n - 1] <= 9)
 	{
-		while (x[n - 1] <= 9)
-		{
-			match_and_print(x, n);
-			x[n - 1]++;
-		}
+		match_and_print(x, n);
+		x[n - 1]++;
 		i = n - 1;
 		while (i > 0)
 		{
