@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:19:14 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/09 18:34:37 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:13:41 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	ft_pustr(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i++], 1);
-	}
+	while (*str)
+		write(1, str++, 1);
 }
