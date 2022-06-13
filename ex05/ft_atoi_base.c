@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft5_isspace(char c)
+int	isspace(char c)
 {
 	int		i;
 	char	*set;
@@ -26,7 +26,7 @@ int	ft5_isspace(char c)
 	return (0);
 }
 
-int	ft5_strlen(char *str)
+int	strlen(char *str)
 {
 	int	i;
 
@@ -41,12 +41,12 @@ int	is_base_incorrect(char *base)
 	int	i;
 	int	j;
 
-	if (!ft5_strlen(base) || ft5_strlen(base) == 1)
+	if (strlen(base) <= 1)
 		return (1);
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || ft5_isspace(base[i]))
+		if (base[i] == '+' || base[i] == '-' || isspace(base[i]))
 			return (1);
 		j = i + 1;
 		while (base[j])
@@ -59,19 +59,35 @@ int	is_base_incorrect(char *base)
 	return (0);
 }
 
+int convert_num(char c, char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        if (str[i] == c)
+            return (i);
+        i++;
+    }
+    return (-1);
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
 	int	res;
 	int	i;
 	int	neg;
 	int	baselen;
+        int ret;
 
 	res = 0;
 	i = 0;
 	neg = 1;
+        baselen = strlen(base);
 	if (is_base_incorrect(base))
 		return (0);
-	while (ft5_isspace(str[i]) && res == 0)
+	while (isspace(str[i]))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
@@ -79,9 +95,13 @@ int	ft_atoi_base(char *str, char *base)
 			neg *= -1;
 		i++;
 	}
-	while (str[i] && '0' <= str[i] && str[i] <= '9')
+	while (str[i])
 	{
-		res = res * 10 + str[i] - '0';
+ret = convert_num(str[i], base);
+if (ret = -1)
+    return (0);
+		res = res * baselen + ret;
+i++;
 	}
 	return (res * neg);
 }
