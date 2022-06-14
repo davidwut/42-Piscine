@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:16:45 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/13 15:26:33 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:52:34 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,46 +31,51 @@
    		return false to trigger backtracking.
 */
 
-int	is_good_board(int *positions)
+int	check_valid_board(int x, int y, int *board, int n)
 {
-	int rdiagonals[10];
-	int ldiagonals[10];
 	int i;
-	int j;
 
-	i = 0;
-	while (i < 10)
+	i = 1;
+	while (i < x)
 	{
-		rdiagonals[i] = i + positions[i];
-		ldiagonals[i] = i - positions[i];
-	}
-	i = 0;
-	while (i < 10)
-	{
-		j = i + 1;
-		while (j < 10)
+		if (board[i] == y || i + y - x = board[i] || board[i] == y + x - i)
 		{
-			if (positions[i] == positions[j] || rdiagonals[i] == rdiagonals[j])
-				return (0);
-			if (ldiagonals[i] == ldiagonals[j])
-				return (0);
+			y++;
+			i = 0;
 		}
 	}
-	return (1);
-}
-
-int	helper(int n, int *positions, int i, int total)
-{
-
+	if (y > n)
+		return 0;
+	else
+		return y;
 }
 
 int ft_ten_queens_puzzle(void)
 {
-	int	positions[10];
+	int	board[51];
+	int n;
 	int	i;
+	int ret;
 
-	i = 0;
-	while (i < 10)
-		positions[i] = 0;
-	return helper(10, positions, 0, 0);
+	n = 10;
+	i = 1;
+	while (i <= n)
+		board[i] = 1;
+	i = 1;
+	while (1)
+	{
+		while (i <= n)
+		{
+			ret = check(i, board[i]);
+			if (ret != 0)
+				board[i] = ret;
+			else
+			{
+				board[i] = 1;
+				board[i - 1] = board[i = 1] + 1;
+				i = i - 2;
+			}
+		}
+		i++;
+	}
 }
