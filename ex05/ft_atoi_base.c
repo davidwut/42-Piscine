@@ -6,11 +6,11 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:37:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/13 18:39:15 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:08:14 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isspace(char c)
+int	ft_isspace(char c)
 {
 	int		i;
 	char	*set;
@@ -26,7 +26,7 @@ int	isspace(char c)
 	return (0);
 }
 
-int	strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -41,12 +41,12 @@ int	is_base_incorrect(char *base)
 	int	i;
 	int	j;
 
-	if (strlen(base) <= 1)
+	if (ft_strlen(base) <= 1)
 		return (1);
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || isspace(base[i]))
+		if (base[i] == '+' || base[i] == '-' || ft_isspace(base[i]))
 			return (1);
 		j = i + 1;
 		while (base[j])
@@ -60,18 +60,18 @@ int	is_base_incorrect(char *base)
 	return (0);
 }
 
-int convert_num(char c, char *str)
+int	convert_num(char c, char *base)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] == c)
-    		return (i);
-        i++;
-    }
-    return (-1);
+	i = 0;
+	while (base[i])
+	{
+		if (base[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1);
 }
 
 int	ft_atoi_base(char *str, char *base)
@@ -79,14 +79,14 @@ int	ft_atoi_base(char *str, char *base)
 	int	res;
 	int	i;
 	int	neg;
-    int	ret;
+	int	ret;
 
 	res = 0;
 	i = 0;
 	neg = 1;
 	if (is_base_incorrect(base))
 		return (0);
-	while (isspace(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
@@ -94,9 +94,9 @@ int	ft_atoi_base(char *str, char *base)
 	while (str[i])
 	{
 		ret = convert_num(str[i++], base);
-		if (ret = -1)
-    		return (0);
-		res = res * strlen(base) + ret;
+		if (ret == -1)
+			return (0);
+		res = res * ft_strlen(base) + ret;
 	}
 	return (res * neg);
 }
