@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:15:48 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/14 15:39:14 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:40:56 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 		i++;
-	return i;
+	return (i);
 }
 
 char	*ft_strncat(char *dst, char *src, unsigned int n)
@@ -51,7 +51,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		total_size;
 
 	if (size <= 0)
-		return (char *)malloc(0);
+		return ((char *)malloc(0));
 	i = 0;
 	total_size = ft_strlen(sep) * size - 1;
 	while (i < size)
@@ -68,5 +68,5 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			ft_strncat(res, sep, ft_strlen(sep));
 		i++;
 	}
-	return res;
+	return (res);
 }
