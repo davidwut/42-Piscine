@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:43:01 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/14 16:12:21 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:37:20 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,46 @@ int	get_neg_sign(char *n, int *i)
 	return neg;
 }
 
+int	from_base_to_dec(char n, char *base)
+{
+	int  i;
+
+	i = 0;
+	while (base[i])
+	{
+		if (n == base[i])
+			return i;
+		i++;
+	}
+	return -1;
+}
+
 char *ft_convert_base(char *n, char *base_from, char *base_to)
 {
 	int i;
+	int j;
 	int neg;
+	char *res;
+	int ret;
+
 	if (!is_correct_base(base_from) || !is_correct_base(base_to))
 		return (NULL);
 	i = 0;
 	while (ft_isspace(n[i]))
 		i++;
 	neg = get_neg_sign(n, &i);
-
+	res = malloc(sizeof(*res) * ft_strlen(n));
+	if (neg == -1)
+		res[0] = '-';
+	j = neg == -1;
+	while (n[i])
+	{
+		ret = from_base_to_dec(n[i], base_from);
+		if (ret == -1)
+			return (NULL);
+		res[j] = base_to[ret];
+		j++;
+		i++;
+	}
+	return (res);
 }
