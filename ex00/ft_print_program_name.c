@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:49:41 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/15 14:47:11 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:51:46 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ int	main(int argc, char **argv)
 {
 	(void)argc;
 	ft_putstr(argv[0]);
+	ft_putstr("\n");
 }
