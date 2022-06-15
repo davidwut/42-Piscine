@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:39:18 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/12 15:03:40 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/15 09:53:54 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void	ex02_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
+	if (nb == -2147483648)
+	{
+		ex02_putchar('-');
+		ex02_putchar('2');
+		nb = 147483648;
+	}
 	if (nb < 0)
 	{
 		ex02_putchar('-');
