@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:30:33 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/13 17:58:34 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/15 14:49:54 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 void	ft_putstr(char *str)
 {
 	while (*str)
-	{
-		write(1, str, 1);
-		str++;
-	}
+		write(1, str++, 1);
 }
 
 int	main(int argc, char **argv)
