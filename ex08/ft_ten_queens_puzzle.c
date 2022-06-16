@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:16:45 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/16 10:26:33 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/16 10:28:50 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_putchar(char c)
 
 int	is_valid_cell(int *board, int x, int y)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < x)
@@ -56,8 +56,8 @@ int	is_valid_cell(int *board, int x, int y)
 
 void	solve(int *board, int queens, int *res)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	if (queens == N)
 	{
@@ -86,7 +86,7 @@ int	ft_ten_queens_puzzle(void)
 {
 	int	board[N];
 	int	i;
-	int res;
+	int	res;
 
 	i = 0;
 	while (i < N)
