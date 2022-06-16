@@ -6,91 +6,69 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:20:02 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/13 10:09:55 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/16 17:41:47 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	putformat(int *x, int n)
+void	ft_putstr(char *str)
 {
-	int	i;
-	int	is_last_num;
-
-	is_last_num = 1;
-	i = 0;
-	while (i < n)
-	{
-		putchar(x[i] + '0');
-		if (x[i] != 10 - n + i)
-			is_last_num = 0;
-		i++;
-	}
-	if (!is_last_num)
-	{
-		putchar(',');
-		putchar(' ');
-	}
+	while (*str)
+		ft_putchar(*str++);
 }
 
-void	match_and_print(int *arr, int n)
+void	print_num(int *num, int n)
 {
-	int	i;
-	int	flags[10];
+	int i;
 
 	i = 0;
-	while (i < 10)
+	while (i < n)
+		ft_putchar(num[i++] + '0');
+	if (!(num[0] == 10 - n && num[n - 1] == 9))
+			ft_putstr(", ");
+}
+
+void	adjust_num(int *num, int n)
+{
+	int	i;
+	int	carry;
+
+
+	i = 0;
+	carry = 0;
+	while (num[n - 1 - i] > 9 - i)
 	{
-		flags[i] = 0;
+		num[n - 2 - i]++;
 		i++;
 	}
-	i = 0;
+	i = 1;
 	while (i < n)
 	{
-		flags[arr[i]]++;
-		if (flags[arr[i]] > 1)
-			return ;
+		if (num[i] > 10 - n + i)
+			num[i] = num[i - 1] + 1;
 		i++;
 	}
-	putformat(arr, n);
 }
 
 void	ft_print_combn(int n)
 {
-	int	x[10];
-	int	i;
+	int num[10];
+	int i;
 
-	i = 0;
-	while (++i <= n)
-		x[i - 1] = i - 1;
-	while (x[0] <= 10 - n && x[n - 1] <= 9)
+	i = -1;
+	while (++i < n)
+		num[i] = i;
+	while (num[0] <= 10 - n && num[n - 1] <= 9)
 	{
-		match_and_print(x, n);
-		x[n - 1]++;
-		i = n - 1;
-		while (i > 0)
-		{
-			if (x[i] >= 10 - n + i)
-			{
-				x[i - 1]++;
-				x[i] = x[i - 1] + 1;
-			}
-			i--;
-		}
+		print_num(num, n);
+		num[n - 1]++;
+		if (n > 1)
+			adjust_num(num, n);
 	}
 }
-
-#ifdef og
-
-int	main(void)
-{
-	ft_print_combn(5);
-	return (0);
-}
-
-#endif
