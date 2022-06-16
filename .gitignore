@@ -1,4 +1,8 @@
+*
+!*/
+!*.*
 .DS_STORE
 *.o*
 tester*
 main*
+*dSYM*
