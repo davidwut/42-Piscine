@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:16:45 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/15 10:52:22 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/16 10:26:33 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,119 +29,69 @@
        		step (a) to try other rows.
 	4) If all rows have been tried and nothing worked,
    		return false to trigger backtracking.
+
 */
+
 #include <unistd.h>
-#define N 4
-int	ft_abs(int x)
+#define N 10
+
+void	ft_putchar(char c)
 {
-	if (x < 0)
-		return (x * -1);
-	return (x);
+	write(1, &c, 1);
 }
 
-int	is_valid_cell(int **board, int x, int y)
+int	is_valid_cell(int *board, int x, int y)
 {
-	int	i;
-	int	j;
+	int i;
 
 	i = 0;
-	while (i < N)
+	while (i < x)
 	{
-		j = 0;
-		while (j < N)
-		{
-			if (i == x && j == y)
-				continue;
-			if (board[i][j] && (i == x || j == y))
-				return (0);
-			if(board[i][j] && (i + j == x + y || i - j == x - y))
-				return (0);
-			j++;
-		}
+		if (board[i] == y || x + y == i + board[i] || x - y == i - board[i])
+			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	solve(int **board, int x, int y)
+void	solve(int *board, int queens, int *res)
 {
 	int i;
 	int j;
 
-	if (x >= N - 1)
-		return (1);
-	i = 0;
-	while (i < N)
+	if (queens == N)
 	{
 		j = 0;
+		*res += 1;
 		while (j < N)
-		{
-			if (!board[i][j] && is_valid_cell(board, i, j))
-			{
-				board[i][j] = 1;
-				if (solve(board, i + 1, j))
-					return (1);
-				board[i][j] = 0;
-			}
-			j++;
-		}
-		i++;
+			ft_putchar(board[j++] + '0');
+		ft_putchar('\n');
 	}
-	return (0);
+	else
+	{
+		i = 0;
+		while (i < N)
+		{
+			if (is_valid_cell(board, queens, i))
+			{
+				board[queens] = i;
+				solve(board, queens + 1, res);
+			}
+			i++;
+		}
+	}
 }
 
-void	init_board(int **board)
+int	ft_ten_queens_puzzle(void)
 {
+	int	board[N];
 	int	i;
-	int	j;
-
-	i = 0;
-	while (i < N)
-	{
-		while (j < N)
-		{
-			board[i][j] = 0;
-			j++;
-		}
-		i++;
-	}
-}
-
-void	print_solution(int **board)
-{
-	int		i;
-	int		j;
-	char	c;
-
-	i = 0;
-	while (i < N)
-	{
-		j = 0;
-		while (j < N)
-		{
-			if(board[i][j])
-			{
-				c = board[i][j] + '0';
-				write(1, &c, 1);
-				continue;
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
-int ft_ten_queens_puzzle(void)
-{
-	int	board[N][N];
-	int i;
-	int n;
 	int res;
 
 	i = 0;
+	while (i < N)
+		board[i++] = -1;
 	res = 0;
-	init_board(board);
-	if (solve(board, 0, 0))
-		print_solution(board);
+	solve(board, 0, &res);
 	return (res);
 }
