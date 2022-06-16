@@ -1,3 +1,8 @@
+*
+!*/
+!*.*
 .DS_STORE
 *.o*
-*.swp
+tester*
+main*
+*dSYM*
