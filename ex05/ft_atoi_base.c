@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:37:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/14 11:08:14 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/16 12:04:32 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isspace(char c)
 
 	i = 0;
 	set = " \f\n\r\t\v";
-	while (set[i] != '\0')
+	while (set[i])
 	{
 		if (set[i] == c)
 			return (1);
@@ -77,26 +77,25 @@ int	convert_num(char c, char *base)
 int	ft_atoi_base(char *str, char *base)
 {
 	int	res;
-	int	i;
 	int	neg;
 	int	ret;
 
 	res = 0;
-	i = 0;
 	neg = 1;
 	if (is_base_incorrect(base))
 		return (0);
-	while (ft_isspace(str[i]))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
+	while (ft_isspace(*str))
+		str++;
+	while (*str == '-' || *str == '+')
+		if (*str++ == '-')
 			neg *= -1;
-	while (str[i])
+	while (*str)
 	{
-		ret = convert_num(str[i++], base);
+		ret = convert_num(*str, base);
 		if (ret == -1)
-			return (0);
+			return (res * neg);
 		res = res * ft_strlen(base) + ret;
+		str++;
 	}
 	return (res * neg);
 }
