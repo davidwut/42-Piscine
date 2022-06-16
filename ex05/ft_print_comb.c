@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dwuthric <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:34:56 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/08 13:35:00 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:44:14 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
 void	putnum(int x, int y, int z)
 {
-	putchar(x + '0');
-	putchar(y + '0');
-	putchar(z + '0');
+	ft_putchar(x + '0');
+	ft_putchar(y + '0');
+	ft_putchar(z + '0');
 }
 
 void	putformat(int x, int y, int z)
@@ -29,8 +29,8 @@ void	putformat(int x, int y, int z)
 	putnum(x, y, z);
 	if (!(x == 7 && y == 8 && z == 9))
 	{
-		putchar(',');
-		putchar(' ');
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
 }
 
