@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:43:01 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/15 13:17:23 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:16:31 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char	*from_dec_to_base(int n, char *base_to, int neg)
 	int		i;
 	int		j;
 	char	*res;
+	int		neg_helper;
 
 	i = 0;
 	while (n)
@@ -109,11 +110,17 @@ char	*from_dec_to_base(int n, char *base_to, int neg)
 		i++;
 		n /= ft_strlen(base_to);
 	}
-	res = (char *)malloc(sizeof(*res) * (i + 1));
-	j = 0;
-	while (j < i)
+	if(neg == 1)
+		neg_helper = 0;
+	else
+		neg_helper = 1;
+	res = (char *)malloc(sizeof(*res) * (i + 1 + neg_helper));
+	if(neg_helper)
+		res[0] = '-';
+	j = neg_helper;
+	while (j < i + neg_helper)
 	{
-		res[j] = temp[100 - i + j];
+		res[j] = temp[100 - i + j - neg_helper];
 		j++;
 	}
 	return (res);
