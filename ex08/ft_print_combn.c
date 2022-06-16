@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:20:02 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/16 17:41:47 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/16 17:47:20 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,19 @@ void	ft_putstr(char *str)
 
 void	print_num(int *num, int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < n)
 		ft_putchar(num[i++] + '0');
 	if (!(num[0] == 10 - n && num[n - 1] == 9))
-			ft_putstr(", ");
+		ft_putstr(", ");
 }
 
 void	adjust_num(int *num, int n)
 {
 	int	i;
 	int	carry;
-
 
 	i = 0;
 	carry = 0;
@@ -58,8 +57,8 @@ void	adjust_num(int *num, int n)
 
 void	ft_print_combn(int n)
 {
-	int num[10];
-	int i;
+	int	num[10];
+	int	i;
 
 	i = -1;
 	while (++i < n)
