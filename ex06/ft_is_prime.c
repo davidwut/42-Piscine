@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:26:07 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/13 13:08:40 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/17 10:30:05 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ int	ft_is_prime(int n)
 
 	if (n <= 1)
 		return (0);
-	if (n == 2)
-		return (1);
 	i = 2;
-	while (i <= n / 2 + 1)
+	while (i <= n / i)
 	{
 		if (n % i == 0)
 			return (0);
