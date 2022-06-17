@@ -6,12 +6,17 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:11:07 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/15 18:16:17 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:47:22 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
 # define FT_POINT_H
 
-typedef
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}	t_point;
+
 #endif
