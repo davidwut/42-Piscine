@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 17:11:23 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/19 13:29:38 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 16:20:25 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ typedef enum e_views {
 
 int	g_size;
 int	g_sum;
+int	g_done;
 #endif

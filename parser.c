@@ -6,13 +6,12 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:02:10 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/19 13:31:53 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 17:21:00 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "definitions.h"
-#include <stdio.h>
 
 int	count(char *str)
 {
@@ -61,7 +60,7 @@ int	**convert(char *input)
 	return (res);
 }
 
-void	set_sum()
+void	set_sum(void)
 {
 	int	i;
 	int	sum;
