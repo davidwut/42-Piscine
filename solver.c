@@ -6,12 +6,11 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 10:39:39 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/19 17:21:42 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 17:44:34 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "definitions.h"
 
 void	ft_putstr(char *str);

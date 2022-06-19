@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:02:10 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/19 17:21:00 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 18:09:56 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	**parse(int argc, char **argv)
 	if (argc != 2)
 		return (NULL);
 	size = count(argv[1]);
+	if (argv[1][size * 2 - 1] == ' ')
+		return (NULL);
 	if (size % 4 != 0 || size < 12)
 		return (NULL);
 	g_size = size / 4;
