@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:02:10 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/19 18:09:56 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 19:11:30 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	**convert(char *input)
 	int	i_input;
 	int	val;
 
-	res = malloc(sizeof(*res) * g_size);
+	res = malloc(sizeof(*res) * 4);
 	i_res = 0;
 	i_input = 0;
 	while (input[i_input])
@@ -51,7 +51,7 @@ int	**convert(char *input)
 		val = input[i_input] - '0';
 		if (val <= 0 || val > g_size)
 			return (NULL);
-		res[i_res / g_size][i_res % 4] = val;
+		res[i_res / g_size][i_res % g_size] = val;
 		if (input[i_input + 1] == 0)
 			break ;
 		i_input += 2;
