@@ -6,69 +6,72 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:02:10 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/18 15:37:10 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 11:04:12 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "definitions.h"
+#include <stdio.h>
 
-int	*append_int(char c, int *list)
-{
-	int	*res;
-	int	i;
-	int	list_len;
-
-	list_len = 0;
-	while (list[list_len] != -1)
-		list_len++;
-	res = malloc(sizeof(*res) * (list_len + 2));
-	i = 0;
-	while (i < list_len)
-	{
-		res[i] = list[i];
-		i++;
-	}
-	res[i] = c - '0';
-	res[i + 1] = -1;
-	free(list);
-	return (res);
-}
-
-int	*convert(char *str, int *n)
+int	count(char *str)
 {
 	int	i;
-	int	*res;
-	int	space_last;
+	int	size;
 
-	space_last = 1;
 	i = 0;
-	res = malloc(sizeof(*res));
-	res[0] = -1;
+	size = 0;
 	while (str[i])
 	{
-		if (space_last && '0' <= str[i] && str[i] <= '9')
-		{
-			n++;
-			res = append_int(str[i], res);
-			space_last = 0;
-		}
-		else if (!space_last && !('0' <= str[i] && str[i] <= '0'))
-			space_last = 1;
-		else
+		if (!('0' <= str[i] && str[i] <= '9'))
+			return (-1);
+		size++;
+		if (str[i + 1] == 0)
+			return (size);
+		else if (str[i + 1] != ' ')
+			return (-1);
+		i += 2;
+	}
+	return (size);
+}
+
+int	**convert(char *input)
+{
+	int	**res;
+	int	i_res;
+	int	i_input;
+	int	val;
+
+	res = malloc(sizeof(*res) * g_size);
+	i_res = 0;
+	i_input = 0;
+	while (input[i_input])
+	{
+		if (i_res % g_size == 0)
+			res[i_res / g_size] = malloc(sizeof(int *) * g_size);
+		val = input[i_input] - '0';
+		if (val <= 0 || val > g_size)
 			return (NULL);
-		i++;
+		res[i_res / g_size][i_res % 4] = val;
+		if (input[i_input + 1] == 0)
+			break ;
+		i_input += 2;
+		i_res++;
 	}
 	return (res);
 }
 
-int	*parse(int argc, char **argv, int *n)
+int	**parse(int argc, char **argv)
 {
-	int *res;
+	int	**res;
+	int	size;
 
 	if (argc != 2)
 		return (NULL);
-	res = convert(argv[1], n);
-	if (res == NULL || *n == -1)
+	size = count(argv[1]);
+	if (size % 4 != 0 || size < 12)
 		return (NULL);
+	g_size = size / 4;
+	res = convert(argv[1]);
 	return (res);
 }
