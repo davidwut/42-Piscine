@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:02:10 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/19 11:04:12 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:31:53 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,21 @@ int	**convert(char *input)
 	return (res);
 }
 
+void	set_sum()
+{
+	int	i;
+	int	sum;
+
+	i = 1;
+	sum = 0;
+	while (i <= g_size)
+	{
+		sum += i;
+		i++;
+	}
+	g_sum = sum;
+}
+
 int	**parse(int argc, char **argv)
 {
 	int	**res;
@@ -72,6 +87,7 @@ int	**parse(int argc, char **argv)
 	if (size % 4 != 0 || size < 12)
 		return (NULL);
 	g_size = size / 4;
+	set_sum();
 	res = convert(argv[1]);
 	return (res);
 }

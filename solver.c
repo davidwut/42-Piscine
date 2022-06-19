@@ -6,11 +6,15 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 10:39:39 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/19 12:45:14 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/19 14:03:34 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "definitions.h"
+void	print_board(int **board);
+void	fill_vertical(int ***data);
+void	fill_horizontal(int ***data);
+int	valid_solution(int ***data);
 
 int	**init_board(int ***data)
 {
@@ -34,63 +38,31 @@ int	**init_board(int ***data)
 	return (board);
 }
 
-void	fill_vertical(int ***data)
+int	valid_placement(int ***data, int x, int y, int val)
 {
-	int	i;
-	int	j;
 
-	i = -1;
-	while (++i < g_size)
-	{
-		if (data[INPUT][COL_UP][i] == g_size)
-			j = -1;
-			while (++j < g_size)
-				data[BOARD][j][i] = j + 1;
-		if (data[INPUT][COL_UP][i] == 1)
-			data[BOARD][0][i] = g_size;
-	}
-	i = -1;
-	while (++i < g_size)
-	{
-		if (data[INPUT][COL_DOWN][i] == g_size)
-			j = -1;
-			while (++j < g_size)
-				data[BOARD][g_size - 1 - j][i] = j + 1;
-		if (data[INPUT][COL_DOWN][i] == 1)
-			data[BOARD][g_size - 1][i] = g_size;
-	}
 }
 
-void	fill_horizontal(int ***data)
+void	solve_helper(int ***data, int x, int y)
 {
-	int	i;
-	int	j;
+	int	val;
 
-	i = -1;
-	while (++i < g_size)
+	if (x == g_size && y == g_size && valid_solution(data))
+		print_board(data[BOARD]);
+	else if (y == g_size)
+		solve_helper(data, x + 1, 0);
+	else
 	{
-		if (data[INPUT][ROW_LEFT][i] == g_size)
-			j = -1;
-			while (++j < g_size)
-				data[BOARD][i][j] = j + 1;
-		if (data[INPUT][ROW_LEFT][i] == 1)
-			data[BOARD][i][0] = g_size;
+		val = 0;
+		while (++val <= g_size)
+		{
+			if (valid_placement(data, x, y, val))
+			{
+				data[BOARD][x][y] = val;
+				solve_helper(data, x, y + 1);
+			}
+		}
 	}
-	i = -1;
-	while (++i < g_size)
-	{
-		if (data[INPUT][ROW_RIGHT][i] == g_size)
-			j = -1;
-			while (++j < g_size)
-				data[BOARD][i][g_size - 1 - j] = j + 1;
-		if (data[INPUT][ROW_RIGHT][i] == 1)
-			data[BOARD][i][g_size - 1] = g_size;
-	}
-}
-
-void	solve_helper(int ***data, int x, int y, int val)
-{
-
 }
 
 void	solve(int **input)
@@ -102,5 +74,5 @@ void	solve(int **input)
 	data[BOARD] = init_board(data);
 	fill_vertical(data);
 	fill_horizontal(data);
-	solve_helper(data, 0, 0, 1);
+	solve_helper(data, 0, 0);
 }
