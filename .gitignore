@@ -1,6 +1,7 @@
 *
 !*/
 !*.*
+!Makefile
 .DS_STORE
 *.o*
 tester*
