@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 14:48:45 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/17 15:13:19 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:22:47 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_strlen(char *str)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (str[count])
@@ -26,21 +26,26 @@ int	ft_strlen(char *str)
 char	*ft_strcpy(char *src)
 {
 	unsigned int	i;
-	char 			*res;
+	char			*res;
 
+	res = malloc(sizeof(*res) * ft_strlen(src) + 1);
+	if (!res)
+		return (NULL);
 	i = -1;
-	res = malloc(sizeof(*res) * ft_strlen(src));
 	while (src[++i])
 		res[i] = src[i];
+	res[i] = 0;
 	return (res);
 }
 
-struct s_stock_str *ft_strs_to_tab(int ac, char **av)
+t_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	struct s_stock_str	*res;
-	unsigned int		i;
+	t_stock_str	*res;
+	int			i;
 
 	res = malloc(sizeof(*res) * ac + 1);
+	if (!res)
+		return (NULL);
 	res[ac].size = ac;
 	res[ac].str = 0;
 	res[ac].copy = 0;
