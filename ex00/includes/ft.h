@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 15:52:13 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/21 10:53:16 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/21 10:48:01 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/21 15:44:15 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#ifndef FT_H
+# define FT_H
 
-void	ft_putstr(char *str)
-{
-	while (*str)
-		write(1, str++, 1);
-}
+# include <unistd.h>
+
+void	ft_putstr(char *str);
+#endif
