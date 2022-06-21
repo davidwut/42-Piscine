@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:20:02 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/16 17:47:20 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/21 10:02:19 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,16 @@ void	ft_print_combn(int n)
 	int	num[10];
 	int	i;
 
+	if (n < 1 || n > 9)
+		return ;
 	i = -1;
 	while (++i < n)
 		num[i] = i;
 	while (num[0] <= 10 - n && num[n - 1] <= 9)
 	{
 		print_num(num, n);
+		if ((num[0] == 10 - n && num[n - 1] == 9))
+			return ;
 		num[n - 1]++;
 		if (n > 1)
 			adjust_num(num, n);
