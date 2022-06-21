@@ -10,8 +10,11 @@ RM			:= rm -f
 
 all:		$(NAME)
 
+.c.o:
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
 $(NAME):	$(OBJS)
-			$(CC) -o $(NAME) $(SRCS)
+			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 			$(RM) $(OBJS)
@@ -21,4 +24,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:		all clean fclean re
