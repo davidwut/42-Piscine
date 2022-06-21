@@ -6,16 +6,9 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:12:13 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/15 13:13:59 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:09:25 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 int	ft_strlen(char *str)
 {

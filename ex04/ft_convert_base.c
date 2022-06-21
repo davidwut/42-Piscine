@@ -6,13 +6,12 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:43:01 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/16 18:23:29 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:09:18 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_putchar(char c);
 int		ft_strlen(char *str);
 int		ft_isspace(char c);
 int		valid_in_base(char c, char *base_from);
