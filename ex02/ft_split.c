@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:35:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/20 17:35:57 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/22 11:06:01 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ int	ft_strlen(char *str)
 	return (c);
 }
 
-int	next_token(char *str, char *charset)
+int	next_token(char *str, int last, char *charset)
 {
 	int	i;
 	int	j;
 
 	i = -1;
-	while (str[++i])
+	while (str[last + (++i)])
 	{
 		j = -1;
 		while (charset[++j])
-			if (charset[j] == str[i])
-				return (i);
+			if (charset[j] == str[last + i])
+				return (last + i);
 	}
-	return (i);
+	return (last + i);
 }
 
 int	listlen(char **list)
@@ -54,7 +54,7 @@ char	**append_str(char *str, int from, int to, char **list)
 	int		i;
 	int		j;
 
-	if (to - from <= 1)
+	if (to - from < 1)
 		return (list);
 	res = malloc(sizeof(*res) * (listlen(list) + 2));
 	i = -1;
@@ -83,7 +83,7 @@ char	**ft_split(char *str, char *charset)
 	last = 0;
 	while (1)
 	{
-		next = last + next_token(str + last, charset);
+		next = next_token(str, last, charset);
 		res = append_str(str, last, next, res);
 		last = next + 1;
 		if (next == ft_strlen(str))
