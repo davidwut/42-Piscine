@@ -14,7 +14,7 @@ all:		$(NAME)
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+			$(CC) $(CFLAGS) -o $(NAME) $(SRCS)
 
 clean:
 			$(RM) $(OBJS)
