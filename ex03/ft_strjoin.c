@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:15:48 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/22 12:15:31 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:36:43 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strjoin(int size, char **list, char *sep)
 
 	total_size = ft_strlen(sep) * (size - 1);
 	i = -1;
-	while (++i)
+	while (list[++i])
 		total_size += ft_strlen(list[i]);
 	res = init_str(total_size + 1);
 	i = -1;
