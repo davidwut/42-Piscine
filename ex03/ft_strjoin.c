@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:15:48 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/21 18:09:52 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/22 10:53:58 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,16 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strncat(char *dst, char *src, unsigned int n)
+void	ft_strncat(char *dst, char *src, int n)
 {
-	unsigned int	i;
-	unsigned int	dst_size;
+	int	i;
+	int	dst_size;
 
-	dst_size = 0;
+	dst_size = ft_strlen(dst);
 	i = -1;
-	while (dst[++i] != '\0')
-		dst_size++;
-	i = -1;
-	while (src[++i] != '\0' && i < n)
+	while (src[++i] && i < n)
 		dst[dst_size + i] = src[i];
-	dst[dst_size + i] = '\0';
-	return (dst);
+	dst[dst_size + i] = 0;
 }
 
 char	*init_str(int size)
@@ -56,8 +52,6 @@ char	*ft_strjoin(int size, char **list, char *sep)
 	int		total_size;
 	char	*res;
 
-	if (size <= 0)
-		return (init_str(1));
 	total_size = ft_strlen(sep) * (size - 1);
 	i = -1;
 	while (++i)
@@ -66,9 +60,9 @@ char	*ft_strjoin(int size, char **list, char *sep)
 	i = -1;
 	while (++i < size)
 	{
-		res = ft_strncat(res, list[i], ft_strlen(list[i]));
+		ft_strncat(res, list[i], ft_strlen(list[i]));
 		if (i != size - 1)
-			res = ft_strncat(res, sep, ft_strlen(sep));
+			ft_strncat(res, sep, ft_strlen(sep));
 	}
 	return (res);
 }
