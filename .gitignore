@@ -18,3 +18,5 @@ ft_list_push_back.c
 !ex04/ft_list_push_back.c
 ft_list_push_strs.c
 !ex05/ft_list_push_strs.c
+ft_list_clear.c
+!ex06/ft_list_clear.c
