@@ -14,3 +14,5 @@ ft_list_size.c
 !ex02/ft_list_size.c
 ft_list_last.c
 !ex03/ft_list_last.c
+ft_list_push_back.c
+!ex04/ft_list_push_back.c
