@@ -12,3 +12,5 @@ ft_list_push_front.c
 !ex01/ft_list_push_front.c
 ft_list_size.c
 !ex02/ft_list_size.c
+ft_list_last.c
+!ex03/ft_list_last.c
