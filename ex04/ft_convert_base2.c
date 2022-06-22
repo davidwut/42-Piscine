@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:12:13 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/21 13:09:25 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/22 11:47:03 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,11 @@ int	ft_isspace(char c)
 	int		i;
 	char	*set;
 
-	i = 0;
+	i = -1;
 	set = " \f\n\r\t\v";
-	while (set[i] != '\0')
-	{
+	while (set[++i])
 		if (set[i] == c)
 			return (1);
-		i++;
-	}
 	return (0);
 }
 
@@ -40,9 +37,9 @@ int	valid_in_base(char c, char *base_from)
 {
 	int	i;
 
-	i = 0;
-	while (base_from[i])
-		if (base_from[i++] == c)
+	i = -1;
+	while (base_from[++i])
+		if (base_from[i] == c)
 			return (1);
 	return (0);
 }
@@ -54,8 +51,8 @@ int	is_correct_base(char *base)
 
 	if (ft_strlen(base) <= 1)
 		return (0);
-	i = 0;
-	while (base[i])
+	i = -1;
+	while (base[++i])
 	{
 		if (base[i] == '+' || base[i] == '-' || ft_isspace(base[i]))
 			return (0);
@@ -66,7 +63,6 @@ int	is_correct_base(char *base)
 				return (0);
 			j++;
 		}
-		i++;
 	}
 	return (1);
 }
