@@ -6,11 +6,15 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:44:07 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/21 18:44:53 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:12:00 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *arr, int length, void(*f)(int))
+void	ft_foreach(int *arr, int length, void (*f)(int))
 {
+	int	i;
 
+	i = -1;
+	while (++i < length)
+		(*f)(arr[i]);
 }
