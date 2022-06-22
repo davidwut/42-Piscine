@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:15:48 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/22 13:36:43 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:08:35 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_strncat(char *dst, char *src, int n)
 	i = -1;
 	while (src[++i] && i < n)
 		dst[dst_size + i] = src[i];
-	dst[dst_size + i] = 0;
 }
 
 char	*init_str(int size)
@@ -64,5 +63,6 @@ char	*ft_strjoin(int size, char **list, char *sep)
 		if (i != size - 1)
 			ft_strncat(res, sep, ft_strlen(sep));
 	}
+	res[total_size] = 0;
 	return (res);
 }
