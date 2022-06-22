@@ -6,3 +6,5 @@
 *.o*
 main*
 *dSYM*
+ft_create_elem.c
+!ex00/ft_create_elem.c
