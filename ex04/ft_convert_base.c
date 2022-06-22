@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:43:01 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/22 12:13:55 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:18:01 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ int	from_base_to_dec(char *n, char *base)
 	return (total);
 }
 
-char	*ft_clean(char *str, char *base_from, int *neg)
+char	*ft_clean(char *str, int *neg)
 {
-	char	*res;
 	int		i;
 
 	i = 0;
@@ -67,7 +66,6 @@ char	*prepend_num(char *str, char c)
 char	*from_dec_to_base(int n, char *base_to, int neg)
 {
 	char	*res;
-	int		i;
 
 	res = malloc(sizeof(*res) * 1);
 	res[0] = 0;
@@ -90,7 +88,7 @@ char	*ft_convert_base(char *n, char *base_from, char *base_to)
 	if (!is_correct_base(base_from) || !is_correct_base(base_to))
 		return (NULL);
 	neg = 1;
-	cleaned = ft_clean(n, base_from, &neg);
+	cleaned = ft_clean(n, &neg);
 	ret = from_base_to_dec(cleaned, base_from);
 	return (from_dec_to_base(ret, base_to, neg));
 }
