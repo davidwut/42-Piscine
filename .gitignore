@@ -23,3 +23,5 @@ ft_list_clear.c
 ft_list_at.c
 !ex07/ft_list_at.c
 ex08/ft_list.h
+ft_list_reverse.c
+!ex08/ft_list_reverse.c
