@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:15:48 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/23 10:21:37 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/23 10:30:56 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char	*ft_strjoin(int size, char **list, char *sep)
 		return (malloc(sizeof(*res)));
 	total_size = count_total_size(size, list, ft_strlen(sep));
 	res = malloc(sizeof(*res) * (total_size + 1));
+	if (!res)
+		return (NULL);
 	i = -1;
 	while (++i < size)
 	{
