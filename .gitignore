@@ -33,3 +33,5 @@ ft_list_find.c
 !ex11/ft_list_find.c
 ft_list_remove_if.c
 !ex12/ft_list_remove_if.c
+ft_list_merge.c
+!ex13/ft_list_merge.c
