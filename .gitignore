@@ -35,3 +35,5 @@ ft_list_remove_if.c
 !ex12/ft_list_remove_if.c
 ft_list_merge.c
 !ex13/ft_list_merge.c
+ft_list_sort.c
+!ex14/ft_list_sort.c
