@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:15:48 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/22 15:08:35 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/23 10:21:37 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,47 +22,49 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_strncat(char *dst, char *src, int n)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
-	int	dst_size;
 
-	dst_size = ft_strlen(dst);
 	i = -1;
-	while (src[++i] && i < n)
-		dst[dst_size + i] = src[i];
+	while (src[++i])
+	{
+		*dest = src[i];
+		dest++;
+	}
+	*dest = 0;
+	return (dest);
 }
 
-char	*init_str(int size)
+int	count_total_size(int size, char **list, int sep_size)
 {
-	char	*res;
-	int		i;
+	int	total_size;
+	int	i;
 
-	res = malloc(sizeof(*res) * size);
+	total_size = sep_size * -1;
 	i = -1;
 	while (++i < size)
-		res[i] = 0;
-	return (res);
+		total_size += ft_strlen(list[i]) + sep_size;
+	return (total_size);
 }
 
 char	*ft_strjoin(int size, char **list, char *sep)
 {
-	int		i;
-	int		total_size;
 	char	*res;
+	int		total_size;
+	int		i;
 
-	total_size = ft_strlen(sep) * (size - 1);
-	i = -1;
-	while (list[++i])
-		total_size += ft_strlen(list[i]);
-	res = init_str(total_size + 1);
+	if (size <= 0)
+		return (malloc(sizeof(*res)));
+	total_size = count_total_size(size, list, ft_strlen(sep));
+	res = malloc(sizeof(*res) * (total_size + 1));
 	i = -1;
 	while (++i < size)
 	{
-		ft_strncat(res, list[i], ft_strlen(list[i]));
+		res = ft_strcpy(res, list[i]);
 		if (i != size - 1)
-			ft_strncat(res, sep, ft_strlen(sep));
+			res = ft_strcpy(res, sep);
 	}
-	res[total_size] = 0;
-	return (res);
+	*res = 0;
+	return (res - total_size);
 }
