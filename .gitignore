@@ -31,3 +31,5 @@ ft_list_foreach_if.c
 !ex10/ft_list_foreach_if.c
 ft_list_find.c
 !ex11/ft_list_find.c
+ft_list_remove_if.c
+!ex12/ft_list_remove_if.c
