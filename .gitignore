@@ -39,3 +39,5 @@ ft_list_sort.c
 !ex14/ft_list_sort.c
 ft_list_reverse_fun.c
 !ex15/ft_list_reverse_fun.c
+ft_sorted_list_insert.c
+!ex16/ft_sorted_list_insert.c
