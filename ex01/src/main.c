@@ -6,13 +6,13 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:28:33 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/22 12:51:41 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:32:19 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 

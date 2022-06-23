@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:19:40 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/22 13:56:17 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:32:02 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	display_stdin(char *name)
 	}
 }
 
-int		display_file(char *filepath)
+int	display_file(char *filepath)
 {
 	int		file;
 	char	buf[BUFF];
