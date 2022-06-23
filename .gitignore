@@ -27,3 +27,5 @@ ft_list_reverse.c
 !ex08/ft_list_reverse.c
 ft_list_foreach.c
 !ex09/ft_list_foreach.c
+ft_list_foreach_if.c
+!ex10/ft_list_foreach_if.c
