@@ -6,3 +6,5 @@
 *.o*
 main*
 *dSYM*
+btree_create_node.c
+!ex00/btree_create_node.c
