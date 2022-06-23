@@ -10,3 +10,5 @@ btree_create_node.c
 !ex00/btree_create_node.c
 btree_apply_prefix.c
 !ex01/btree_apply_prefix.c
+btree_apply_infix.c
+!ex02/btree_apply_infix.c
