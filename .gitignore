@@ -20,3 +20,6 @@ ft_list_push_strs.c
 !ex05/ft_list_push_strs.c
 ft_list_clear.c
 !ex06/ft_list_clear.c
+ft_list_at.c
+!ex07/ft_list_at.c
+ex08/ft_list.h
