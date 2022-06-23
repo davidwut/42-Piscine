@@ -29,3 +29,5 @@ ft_list_foreach.c
 !ex09/ft_list_foreach.c
 ft_list_foreach_if.c
 !ex10/ft_list_foreach_if.c
+ft_list_find.c
+!ex11/ft_list_find.c
