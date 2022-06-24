@@ -18,3 +18,5 @@ btree_insert_data.c
 !ex04/btree_insert_data.c
 btree_search_item.c
 !ex05/btree_search_item.c
+btree_level_count.c
+!ex06/btree_level_count.c
