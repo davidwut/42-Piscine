@@ -6,13 +6,14 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 19:37:19 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/24 10:10:48 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/24 10:15:27 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
 
-void	btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *))
+void	btree_insert_data(t_btree **root, void *item,
+							int (*cmpf)(void *, void *))
 {
 	t_btree	*node;
 
