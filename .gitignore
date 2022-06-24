@@ -14,3 +14,5 @@ btree_apply_infix.c
 !ex02/btree_apply_infix.c
 btree_apply_suffix.c
 !ex03/btree_apply_suffix.c
+btree_insert_data.c
+!ex04/btree_insert_data.c
