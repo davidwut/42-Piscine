@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:19:40 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/25 19:10:16 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 19:17:01 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	ft_strlen(char *str)
 
 void	print_err(char *program_name, char *fd_name)
 {
-	ft_putstr(basename(program_name), ft_strlen(basename(program_name)), STDERR_FILENO);
+	char *str;
+
+	str = basename(program_name);
+	ft_putstr(str, ft_strlen(str), STDERR_FILENO);
 	ft_putstr(": ", 2, STDERR_FILENO);
 	ft_putstr(fd_name, ft_strlen(fd_name), STDERR_FILENO);
 	ft_putstr(": ", 2, STDERR_FILENO);
