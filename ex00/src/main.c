@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:18:48 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/21 17:03:02 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 10:38:32 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	display_file(char *filepath)
 {
 	int		file;
 	ssize_t	size;
-	char	buf[4096];
+	char	buf[4097];
 
 	file = open(filepath, O_RDONLY);
 	if (file != -1)
