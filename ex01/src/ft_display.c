@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:19:40 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/25 19:17:01 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 19:20:31 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen(char *str)
 
 void	print_err(char *program_name, char *fd_name)
 {
-	char *str;
+	char	*str;
 
 	str = basename(program_name);
 	ft_putstr(str, ft_strlen(str), STDERR_FILENO);
