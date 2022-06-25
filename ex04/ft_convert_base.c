@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 15:43:01 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/22 12:18:01 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 19:25:38 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int		ft_isspace(char c);
 int		is_correct_base(char *base);
 int		valid_in_base(char c, char *base_from);
 
-int	from_base_to_dec(char *n, char *base)
+long long	from_base_to_dec(char *n, char *base)
 {
-	int	i;
-	int	j;
-	int	total;
+	int			i;
+	int			j;
+	long long	total;
 
 	i = -1;
 	total = 0;
@@ -63,7 +63,7 @@ char	*prepend_num(char *str, char c)
 	return (res);
 }
 
-char	*from_dec_to_base(int n, char *base_to, int neg)
+char	*from_dec_to_base(long long n, char *base_to, int neg)
 {
 	char	*res;
 
@@ -81,9 +81,9 @@ char	*from_dec_to_base(int n, char *base_to, int neg)
 
 char	*ft_convert_base(char *n, char *base_from, char *base_to)
 {
-	int		ret;
-	char	*cleaned;
-	int		neg;
+	long long	ret;
+	char		*cleaned;
+	int			neg;
 
 	if (!is_correct_base(base_from) || !is_correct_base(base_to))
 		return (NULL);
