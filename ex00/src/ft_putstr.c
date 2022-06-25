@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:52:13 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/25 18:47:27 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:51:19 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr(char *str, int size, int fd)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < size)
