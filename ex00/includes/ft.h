@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:23:31 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/25 11:43:18 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 11:49:06 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ typedef struct s_map
 }	t_map;
 # define _BUF 4096
 int 	ft_atoi(char *a);
-void	ft_putstr(char *str)
+void	ft_putstr(char *str);
 #endif
