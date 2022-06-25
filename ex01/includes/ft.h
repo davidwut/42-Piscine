@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/23 15:31:34 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:56:30 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 # define BUFF 30000
 
-void	ft_putstr(char *str, int fd);
+void	ft_putstr(char *str, int size, int fd);
 void	ft_putchar(char c, int fd);
 void	print_err(char *program_name, char *fd_name);
 void	display_stdin(char *name);

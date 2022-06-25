@@ -6,14 +6,17 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:07:45 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/21 17:07:47 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:56:18 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft.h"
 
-void	ft_putstr(char *str, int fd)
+void	ft_putstr(char *str, int size, int fd)
 {
-	while (*str)
-		write(fd, str++, 1);
+	int	i;
+
+	i = -1;
+	while (++i < size)
+		write(fd, &str[i], 1);
 }
