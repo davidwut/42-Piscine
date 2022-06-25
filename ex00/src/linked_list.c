@@ -6,17 +6,21 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:21:40 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/25 12:28:42 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 16:57:42 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft.h"
 
-t_list	*ft_create_elem(t_map data)
+t_list	*ft_create_elem(t_ll value, char *text)
 {
 	t_list	*node;
+	t_map	*data;
 
 	node = malloc(sizeof(*node));
+	data = malloc(sizeof(*data));
+	data->value = value;
+	data->text = text;
 	if (node)
 	{
 		node->data = data;
@@ -25,22 +29,55 @@ t_list	*ft_create_elem(t_map data)
 	return (node);
 }
 
-void	ft_sorted_list_insert(t_list **begin, t_map data, int (*cmp)())
+int	cmp_map(t_map *a, t_map *b)
+{
+	return (a->value >= b->value);
+}
+
+void	data_swap(t_list *node)
+{
+	void	*temp;
+
+	temp = node->data;
+	node->data = node->next->data;
+	node->next->data = temp;
+}
+void	ft_list_push_back(t_list **begin_list, t_ll value, char *text)
 {
 	t_list	*new_node;
 	t_list	*current_node;
-	int		size;
-	int		j;
 
-	new_node = ft_create_elem(data);
-	current_node = *begin;
-	size = 0;
-	while (current_node && ++size && (*cmp)(current_node->data, data) < 0)
-		current_node = current_node->next;
-	current_node = *begin;
-	j = -1;
-	while (++j < size - 2)
-		current_node = current_node->next;
-	new_node->next = current_node->next;
-	current_node->next = new_node;
+	current_node = *begin_list;
+	if (current_node)
+	{
+		while (current_node->next)
+			current_node = current_node->next;
+		new_node = ft_create_elem(value, text);
+		new_node->next = NULL;
+		current_node->next = new_node;
+	}
+	else
+		*begin_list = ft_create_elem(value, text);
+}
+
+void	ft_list_sort(t_list **begin, int (*cmp)())
+{
+	t_list	*next_node;
+	int		sorted;
+
+	sorted = 0;
+	while (!sorted)
+	{
+		next_node = *begin;
+		sorted = 1;
+		while (next_node->next)
+		{
+			if ((*cmp)(next_node->data, next_node->next->data) > 0)
+			{
+				data_swap(next_node);
+				sorted = 0;
+			}
+			next_node = next_node->next;
+		}
+	}
 }

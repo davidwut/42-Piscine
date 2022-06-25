@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:23:31 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/25 13:07:46 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 16:47:48 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef long long t_ll;
+
 typedef struct s_map
 {
-	unsigned int	value;
-	char			*text;
+	t_ll		value;
+	char	*text;
 }	t_map;
 
 typedef struct s_list
@@ -31,7 +33,7 @@ typedef struct s_list
 # define _BUF 4096
 int 	ft_atoi(char *a);
 void	ft_putstr(char *str);
-t_list	*ft_create_elem(unsigned int value, char *text);
-void	ft_sorted_list_insert(t_list **begin, unsigned int value, char *text, int (*cmp)());
+t_list	*ft_create_elem(t_ll value, char *text);
+void	ft_sorted_list_insert(t_list **begin, t_ll value, char *text, int (*cmp)());
 int	cmp_map(t_map *a, t_map *b);
 #endif
