@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:48:01 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/21 16:26:31 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:47:25 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 # include <unistd.h>
 
-void	ft_putstr(char *str, int fd);
+void	ft_putstr(char *str, int size, int fd);
 #endif
