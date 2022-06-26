@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 14:42:57 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/26 14:49:31 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/26 13:25:55 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/26 14:50:44 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-int	main(int argc, char **argv)
+int	parse_arg(int ac, char **av, int *start)
 {
-	int	i;
-	int	start;
 	int	bcount;
 
-	start = -1;
-	if (argc == 1)
-		display_stdin(argv[0]);
-	else
+	bcount = -1;
+	if (ac > 1 && av[1][0] == '-')
 	{
-		bcount = parse_arg(argc, argv, &start);
-		if (bcount == -1)
+		if (av[1][1] == 'c')
 		{
-			if (argc < 4)
-				display_stdin(argv[0]);
-		}
-		else
-		{
-			i = start;
-			while (++i < argc)
+			if (av[1][2] && INRANGE(av[1][2], '0', '9'))
 			{
-				if (display_last_nb(argv[i], bcount) == 0)
-					print_err(argv[0], argv[i]);
+				bcount = ft_atoi(av[1] + 2);
+				*start = 1;
+			}
+			else if (ac > 3 && INRANGE(av[2][0], '0', '9'))
+			{
+				bcount = ft_atoi(av[2]);
+				*start = 2;
 			}
 		}
+		else
+			print_help(av);
+		if (bcount == -1)
+			print_illegaloffset(av, *start);
 	}
-	return (0);
+	return (bcount);
 }

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 16:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/24 14:42:37 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/26 13:17:53 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/26 13:42:54 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#include "ft.h"
 
-# include <unistd.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <errno.h>
-# include <string.h>
-# include <libgen.h>
+int	ft_atoi(char *str)
+{
+	int			i;
+	long long	total;
+	int			neg;
 
-# define _BUF 30000
-
-void	ft_putstr(char *str, int fd);
-void	ft_putchar(char c, int fd);
-void	print_err(char *program_name, char *fd_name);
-void	display_stdin(char *name);
-int		display_file(char *filepath);
-
-#endif
+	total = 0;
+	neg = 1;
+	i = 0;
+	while(str[i] && str[i] == ' ')
+		i++;
+	if (str[i] && (str[i] == '+' || str[i] == '-'))
+		i++;
+	while (str[i])
+	{
+		if (!(INRANGE(str[i], '0', '9')))
+			return (-1);
+		total = total * 10 + str[i] - '0';
+		i++;
+	}
+	return (total);
+}
