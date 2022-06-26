@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/25 16:53:44 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:14:46 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ int main(int argc, char **argv)
 	if (argc == 2)
 		head = read_file_and_build(argv[1]);
 	else
-		head = read_file_and_build("../language_packs/numbers_en.dict");
+		head = read_file_and_build("../language_packs/test.dict");
 	if (!head)
 	{
 		ft_putstr("Dict Error\n");
