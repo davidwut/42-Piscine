@@ -37,7 +37,7 @@ void    ft_putnbr(int nb);
 void    ft_putstr(char *str);
 void    print_grid_info(char *str);
 void	clear_grid_header(char **str);
-void    print_grid(char **grid, int x_size, int y_size)
+void    print_grid(char **grid, int x_size, int y_size);
 void    print_grid_from_str(char *str);
 void    print_int_grid_from_str(char *str);
 
