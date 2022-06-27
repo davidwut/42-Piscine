@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:29:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 16:35:04 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:28:24 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ char		*rd_file(char *filename);
 void		solve(char *input);
 int			min(int a, int b, int c);
 void		superfree(int ***map, t_grid_info **info);
-int         handle_edge_case(int **map, t_grid_info *info, int *k, int *l);
+int			handle_edge_case(int **map, t_grid_info *info, int *k, int *l);
 #endif

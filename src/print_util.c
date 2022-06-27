@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 10:57:54 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 15:44:26 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:29:47 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_putnbr(int nb)
 	ft_putchar(nb % 10 + '0');
 }
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	write(1, str, strl(str));
 }

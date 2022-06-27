@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 09:40:33 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 15:29:13 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:28:58 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	**get_grid(char *str, t_grid_info *grid_info)
 	int			i;
 	int			j;
 
-	res = malloc(sizeof (char*) * grid_info->row_amount);
+	res = malloc(sizeof(*res) * grid_info->row_amount);
 	clear_grid_header(&str);
 	i = 0;
 	j = 0;
