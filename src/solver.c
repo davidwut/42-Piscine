@@ -83,7 +83,7 @@ void	print_final_grid(int **map, t_grid_info *info)
 	{
 		j = -1;
 		while (++j < col)
-			print_final_char(map[i][j], info);
+			CHAR_PRINT_FUNC(map[i][j], info);
 		ft_putchar('\n');
 	}
 }

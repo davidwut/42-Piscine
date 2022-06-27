@@ -23,6 +23,12 @@
 # define CYA "\033[0;36m"
 # define NC "\033[0m"
 
+# ifndef COLOR
+#  define CHAR_PRINT_FUNC print_final_char
+# else
+#  define CHAR_PRINT_FUNC print_final_char_color
+# endif
+
 typedef struct s_grid_info
 {
 	int		row_size;

@@ -7,8 +7,12 @@ NAME		:= bsq
 RM			:= rm -f
 CC			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
+CCOLOR		:= $(CFLAGS) -DCOLOR
 
 all:		$(NAME)
+
+color:		$(OBJS)
+			$(CC) $(CCOLOR) -o $(NAME) $(SRCS)
 
 .c.o:
 			$(CC) $(CFLAGS) -c $< -o $(<:%.c=%.o)
@@ -24,4 +28,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re color
