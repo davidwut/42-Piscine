@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:02:46 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 16:28:44 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:37:24 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int	check_grid(char *str, char empty, char wall)
 	int	row_size;
 
 	row_size = get_row_size(str, 0);
+	if (!row_size)
+		return (0);
 	current_row_count = 0;
 	while (str[0])
 	{
