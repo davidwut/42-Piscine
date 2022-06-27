@@ -6,11 +6,12 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:55:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 14:10:52 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:36:58 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdio.h>
 
 void	pg(int **map, s_grid_info *grid_info);
 
@@ -41,10 +42,10 @@ void	solve(char *input)
 	int		**map;
 
 	grid_info = get_grid_info(input);
-	map = get_int_grid(input);
-	pg(map, grid_info);
+	print_grid_info(grid_info);
+	map = get_int_grid(input, grid_info);
+	printf("\n[%s]\n", input);
 	fill_map(&map, grid_info);
-	ft_putstr("\n-----\n");
 	pg(map, grid_info);
 }
 

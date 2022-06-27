@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_util.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwikiera <jwikiera@student.42lausan>       +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 10:57:54 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 10:57:59 by jwikiera         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:33:44 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,8 @@ void ft_putstr(char *str)
     write(1, str, strl(str));
 }
 
-void    print_grid_info(char *str)
+void    print_grid_info(s_grid_info *grid_info)
 {
-    s_grid_info *grid_info;
-
-    grid_info = get_grid_info(str);
     ft_putstr("Grid info: ");
     ft_putstr(""CYA"row amount"NC": "RED"");
     ft_putnbr(grid_info->row_amount);
@@ -62,18 +59,13 @@ void    print_grid_info(char *str)
     ft_putstr(""NC"', "CYA"full char"NC": '"RED"");
     ft_putchar(grid_info->full_char);
     ft_putstr(""NC"'\n");
-    free(grid_info);
 }
 
-void    print_grid_from_str(char *str)
+void    print_grid_from_str(char **grid, s_grid_info *grid_info)
 {
-    s_grid_info *grid_info;
-    char        **grid;
     int         i;
     int         j;
 
-    grid_info = get_grid_info(str);
-    grid = get_grid(str);
     i = 0;
     j = 0;
     while (i < grid_info->row_amount)
@@ -87,6 +79,4 @@ void    print_grid_from_str(char *str)
         j = 0;
         i ++;
     }
-    free(grid);
-    free(grid_info);
 }
