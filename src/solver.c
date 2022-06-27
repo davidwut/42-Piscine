@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:55:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 16:14:32 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:21:51 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	fill_map(int ***map, s_grid_info *info, int *k, int *l)
 			if (m[i][j] != 0)
 			{
 				m[i][j] = min(m[i - 1][j], m[i][j - 1], m[i - 1][j - 1]) + 1;
-				if(max < m[i][j])
+				if (max < m[i][j])
 				{
 					max = m[i][j];
 					*k = i;
