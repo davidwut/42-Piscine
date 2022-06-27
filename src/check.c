@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwikiera <jwikiera@student.42lausan>       +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:02:46 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/26 17:02:47 by jwikiera         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:16:10 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 int get_empty(char **str, char *empty)
 {
-    if ((*str)[0])
-    {
+	if ((*str)[0])
+	{
         *empty = (*str)[0];
         (*str) += 1;
     }
