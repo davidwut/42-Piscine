@@ -20,6 +20,8 @@ void	fill_map(int ***map, t_grid_info *info, int *k, int *l)
 	int	max;
 
 	m = *map;
+	if (handle_edge_case(m, info, k, l))
+		return ;
 	i = 0;
 	max = -1;
 	while (++i < info->row_amount)

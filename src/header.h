@@ -57,4 +57,5 @@ char		*rd_file(char *filename);
 void		solve(char *input);
 int			min(int a, int b, int c);
 void		superfree(int ***map, t_grid_info **info);
+int         handle_edge_case(int **map, t_grid_info *info, int *k, int *l);
 #endif
