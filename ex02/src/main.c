@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:42:57 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/26 14:49:31 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 12:16:00 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 int	main(int argc, char **argv)
 {
 	int	i;
-	int	start;
 	int	bcount;
 
-	start = -1;
+	i = -1;
 	if (argc == 1)
 		display_stdin(argv[0]);
 	else
 	{
-		bcount = parse_arg(argc, argv, &start);
+		bcount = parse_arg(argc, argv, &i);
 		if (bcount == -1)
 		{
 			if (argc < 4)
@@ -31,7 +30,6 @@ int	main(int argc, char **argv)
 		}
 		else
 		{
-			i = start;
 			while (++i < argc)
 			{
 				if (display_last_nb(argv[i], bcount) == 0)

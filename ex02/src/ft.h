@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/26 14:45:08 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 12:11:14 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@
 # include <libgen.h>
 # include <stdlib.h>
 
-#include <stdio.h>
-
 # define _BUF 4096
-# define INRANGE(x,a,b) a <= x && x <= b
 
 void	ft_putstr_fd(char *str, int fd);
 void	ft_putstr(char *str);
@@ -33,11 +30,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);
 void	print_err(char *program_name, char *fd_name);
 void	display_stdin(char *name);
-int	display_last_nb(char *filepath, int bcount);
-int	ft_atoi(char *str);
-int	parse_arg(int ac, char **av, int *start);
-int	file_size(char *filepath);
-void print_illegaloffset(char **av, int start);
-void print_help(char **av);
+int		display_last_nb(char *filepath, int bcount);
+int		ft_atoi(char *str);
+int		parse_arg(int ac, char **av, int *start);
+int		file_size(char *filepath);
+void	print_illegaloffset(char **av, int start);
+void	print_help(char **av);
 
 #endif
