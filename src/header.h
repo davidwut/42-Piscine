@@ -51,5 +51,5 @@ int	**get_int_grid(char *str, s_grid_info *grid_info);
 
 void	solve(char *input);
 int	min(int a, int b, int c);
-
+void	superfree(int ***map, s_grid_info **info);
 #endif
