@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 17:58:55 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:38:37 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,25 @@
 #include "util2.c"
 */
 
-int	main(int argc, char **argv)
+void	do_the_thing(char *input)
 {
-	char	*input;
-
-	if (argc == 1)
-		input = rd_stdin();
-	else
-		input = rd_file(argv[1]);
 	if (input && check(input))
-	{
 		solve(input);
-	}
 	else
 		ft_putstr("map error\n");
+}
+
+int	main(int argc, char **argv)
+{
+	int		i;
+
+	if (argc == 1)
+		do_the_thing(rd_stdin());
+	else
+	{
+		i = 0;
+		while (++i < argc)
+			do_the_thing(rd_file(argv[i]));
+	}
 	return (0);
 }
