@@ -6,12 +6,11 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:01:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 13:07:35 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:52:06 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-#include <stdio.h>
 
 char	*rd_file(char *filename)
 {
