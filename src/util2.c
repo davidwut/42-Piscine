@@ -35,3 +35,21 @@ char	*append_str(char str[_BUF], int size, char *buf)
 	free(buf);
 	return (res);
 }
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	unsigned int	i;
+	unsigned int	destlen;
+
+	destlen = 0;
+	while (dest[destlen])
+		destlen ++;
+	i = 0;
+	while (src[i] && i < nb)
+	{
+		dest[i + destlen] = src[i];
+		i ++;
+	}
+	dest[destlen + i] = 0;
+	return (dest);
+}
