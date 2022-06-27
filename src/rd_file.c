@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:01:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 17:52:06 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:04:27 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,27 +57,3 @@ char	*rd_stdin(void)
 	}
 	return (buf);
 }
-
-/*
-int	main(int argc, char **argv)
-{
-	char	*input;
-
-	if (argc > 1)
-    {
-		input = rd_file(argv[1]);
-        printf("check of map: %d\n", check(input));
-        print_grid_info(input);
-        printf("------\n");
-        print_grid_from_str(input);
-        printf("------\n");
-    }
-	else
-		input = rd_stdin();
-	if (input)
-		printf("<-->\n%s<-->\n", input);
-	else
-		printf("map error\n");
-	return (0);
-}
-*/

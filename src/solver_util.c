@@ -6,16 +6,22 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:57:43 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 17:30:49 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:12:12 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	min(int a, int b, int c)
+int	min(int **map, int i, int j)
 {
 	int	temp;
+	int	a;
+	int	b;
+	int	c;
 
+	a = map[i - 1][j];
+	b = map[i][j - 1];
+	c = map[i - 1][j - 1];
 	temp = a;
 	if (temp > b)
 		temp = b;
