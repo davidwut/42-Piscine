@@ -1,5 +1,5 @@
 SRC_PRE		:= src/
-SRC			:= check.c parse.c print_util.c rd_file.c util.c util2.c main.c
+SRC			:= check.c parse.c parse2.c print_util.c rd_file.c util.c util2.c main.c solver.c solver_util.c
 SRCS		:= $(addprefix $(SRC_PRE),$(SRC))
 OBJS		:= $(SRCS:%.c=%.o)
 NAME		:= bsq
@@ -10,7 +10,7 @@ CFLAGS		:= -Wall -Wextra -Werror
 
 all:		$(NAME)
 
-%.c:		%.o
+.c.o:
 			$(CC) $(CFLAGS) -c $< -o $(<:%.c=%.o)
 
 $(NAME):	$(OBJS)
