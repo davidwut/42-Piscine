@@ -49,5 +49,6 @@ char	*rd_file(char *filename);
 int	**get_int_grid(char *str);
 
 void	solve(char *input);
+int	min(int a, int b, int c);
 
 #endif
