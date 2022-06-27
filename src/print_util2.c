@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-void	print_int_grid_from_str(int **grid, s_grid_info *grid_info)
+void	print_int_grid_from_str(int **grid, t_grid_info *grid_info)
 {
 	int	i;
 	int	j;

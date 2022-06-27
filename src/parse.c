@@ -53,9 +53,9 @@ int	get_row_size(char *str, int should_clear)
 	return (i);
 }
 
-s_grid_info	*get_grid_info(char *str)
+t_grid_info	*get_grid_info(char *str)
 {
-	s_grid_info	*res;
+	t_grid_info	*res;
 
 	res = malloc(sizeof(res));
 	if (!res)
@@ -70,7 +70,7 @@ s_grid_info	*get_grid_info(char *str)
 }
 
 /* Returns 0 if fails to malloc */
-char	**get_grid(char *str, s_grid_info *grid_info)
+char	**get_grid(char *str, t_grid_info *grid_info)
 {
 	char		**res;
 	int			i;

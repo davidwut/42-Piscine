@@ -12,12 +12,12 @@
 
 #include "header.h"
 
-int get_int_for_char(char c, s_grid_info *grid_info)
+int get_int_for_char(char c, t_grid_info *grid_info)
 {
 	return (c == grid_info->empty_char);
 }
 
-int	**get_int_grid(char *str, s_grid_info *grid_info)
+int	**get_int_grid(char *str, t_grid_info *grid_info)
 {
 	int 		**res;
 	int			i;

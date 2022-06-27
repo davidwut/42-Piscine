@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-void	superfree(int ***map, s_grid_info **info)
+void	superfree(int ***map, t_grid_info **info)
 {
 	int	i;
 	int	row;

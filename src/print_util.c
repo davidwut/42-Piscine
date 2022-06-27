@@ -43,7 +43,7 @@ void ft_putstr(char *str)
 	write(1, str, strl(str));
 }
 
-void	print_grid_info(s_grid_info *grid_info)
+void	print_grid_info(t_grid_info *grid_info)
 {
 	ft_putstr("Grid info: ");
 	ft_putstr(""CYA"row amount"NC": "RED"");
@@ -59,7 +59,7 @@ void	print_grid_info(s_grid_info *grid_info)
 	ft_putstr(""NC"'\n");
 }
 
-void	print_grid_from_str(char **grid, s_grid_info *grid_info)
+void	print_grid_from_str(char **grid, t_grid_info *grid_info)
 {
 	int	i;
 	int	j;

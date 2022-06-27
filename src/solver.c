@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-void	fill_map(int ***map, s_grid_info *info, int *k, int *l)
+void	fill_map(int ***map, t_grid_info *info, int *k, int *l)
 {
 	int	i;
 	int	j;
@@ -57,7 +57,7 @@ void	fill_square(int ***map, int start_i, int start_j)
 	}
 }
 
-void	print_final_char(int x, s_grid_info *info)
+void	print_final_char(int x, t_grid_info *info)
 {
 	if (x == -1)
 		ft_putchar(info->full_char);
@@ -67,7 +67,7 @@ void	print_final_char(int x, s_grid_info *info)
 		ft_putchar(info->empty_char);
 }
 
-void	print_final_grid(int **map, s_grid_info *info)
+void	print_final_grid(int **map, t_grid_info *info)
 {
 	int	i;
 	int	j;
@@ -88,7 +88,7 @@ void	print_final_grid(int **map, s_grid_info *info)
 
 void	solve(char *input)
 {
-	s_grid_info	*grid_info;
+	t_grid_info	*grid_info;
 	int			**map;
 	int			biggest_col;
 	int			biggest_row;
