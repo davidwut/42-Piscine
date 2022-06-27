@@ -22,7 +22,10 @@ int	main(int argc, char ** argv)
 		input = rd_file(argv[1]);
 	if (input && check(input))
 	{
-		solve(input);
+		print_grid_from_str(input);
+		ft_putstr("---------\n");
+		print_int_grid_from_str(input);
+		//solve(input);
 	}
 	else
 		ft_putstr("map error\n");

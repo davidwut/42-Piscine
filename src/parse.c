@@ -19,9 +19,9 @@ void	clear_grid_header(char **str)
 {
 	while ((*str)[0] != '\n')
 	{
-		(*str) ++;
+		(*str)++;
 	}
-	(*str) ++;
+	(*str)++;
 }
 
 int	get_real_row_count(char *str)
@@ -53,9 +53,9 @@ int	get_row_size(char *str, int should_clear)
 	return (i);
 }
 
-s_grid_info *get_grid_info(char *str)
+s_grid_info	*get_grid_info(char *str)
 {
-	s_grid_info *res;
+	s_grid_info	*res;
 
 	res = malloc(sizeof(res));
 	if (!res)
@@ -76,9 +76,9 @@ char	**get_grid(char *str)
 	s_grid_info	*grid_info;
 	int			i;
 	int			j;
-	
+
 	grid_info = get_grid_info(str);
-	res = malloc(sizeof(char*) * grid_info->row_amount);
+	res = malloc(sizeof (char*) * grid_info->row_amount);
 	clear_grid_header(&str);
 	i = 0;
 	j = 0;
