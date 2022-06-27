@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:01:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 11:30:33 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:07:35 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ char	*rd_stdin(void)
 	return (buf);
 }
 
+/*
 int	main(int argc, char **argv)
 {
 	char	*input;
@@ -80,3 +81,4 @@ int	main(int argc, char **argv)
 		printf("map error\n");
 	return (0);
 }
+*/
