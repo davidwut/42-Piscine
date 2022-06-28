@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:01:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 10:57:16 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:21:01 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*init_magic(int *buf_size, int size)
 
 	if (size == -1)
 		return (NULL);
-	res = malloc(1);
+	res = malloc(sizeof(*res));
 	if (!res)
 		return (NULL);
 	res[0] = 0;
@@ -65,7 +65,7 @@ char	*rd_stdin(void)
 	if (!buf)
 		return (NULL);
 	line_count = ft_atoi(buf);
-	while (count_char(buf, '\n') < line_count + 1)
+	while (count_char(buf, '\n', buf_size) < line_count + 1)
 	{
 		size = read(STDIN_FILENO, line, _BUF);
 		buf = append_str(line, size, buf, buf_size);

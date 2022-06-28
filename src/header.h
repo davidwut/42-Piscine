@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:29:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 12:21:38 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:47 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		print_grid(char **grid, int x_size, int y_size);
 void		print_grid_from_str(char **grid, t_grid_info *grid_info);
 void		print_int_grid_from_str(int **grid, t_grid_info *grid_info);
 int			get_file_size(char *filename);
-int			count_char(char *str, char c);
+int			count_char(char *str, char c, int size);
 char		*append_str(char str[_BUF], int size, char *buf, int buf_size);
 char		*rd_stdin(void);
 char		*rd_file(char *filename);

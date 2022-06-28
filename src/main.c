@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 12:22:00 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:02:12 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@
 #include "util.c"
 #include "util2.c"
 */
-
-#include <stdio.h>
 
 void	do_the_thing(char *input)
 {

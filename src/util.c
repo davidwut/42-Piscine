@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:10:44 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 17:52:14 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:28 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,15 @@ int	get_file_size(char *filename)
 	return (total_size);
 }
 
-int	count_char(char *str, char c)
+int	count_char(char *str, char c, int size)
 {
 	int	count;
+	int	i;
 
 	count = 0;
-	while (*str)
-	{
-		if (*str == c)
+	i = -1;
+	while (++i < size)
+		if (str[i] == c)
 			count++;
-		str++;
-	}
 	return (count);
 }
