@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwikiera <jwikiera@student.42lausan>       +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:48:55 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/28 11:48:56 by jwikiera         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:57:33 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	char_printable(char c)
 {
-	return (c >= 32 && c <= 127);
+	return (c >= ' ' && c <= '~');
 }
 
 int	check_chars(char empty, char wall, char full)
