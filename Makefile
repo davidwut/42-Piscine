@@ -16,6 +16,9 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
+debug:		$(OBJS)
+			$(CC) $(CFLAGS) -ggdb3 -o $(NAME) $(OBJS)
+
 clean:
 			$(RM) $(OBJS)
 
@@ -24,4 +27,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re debug
