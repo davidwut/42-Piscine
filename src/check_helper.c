@@ -26,3 +26,14 @@ int	check_chars(char empty, char wall, char full)
 		return (0);
 	return (1);
 }
+
+int	get_grid_char_amount(char *str)
+{
+	t_grid_info *grid_info;
+	int			char_amount;
+
+	grid_info = get_grid_info(str);
+	char_amount = grid_info->row_size * grid_info->row_amount;
+	free(grid_info);
+	return (char_amount);
+}
