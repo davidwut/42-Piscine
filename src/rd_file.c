@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:01:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 13:21:01 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:26:36 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,26 +52,18 @@ char	*rd_stdin(void)
 	char	line[_BUF];
 	char	*buf;
 	int		size;
-	int		line_count;
 	int		buf_size;
 
 	size = read(STDIN_FILENO, line, _BUF);
-	if (!('0' <= line[0] && line[0] <= '9'))
-		return (NULL);
 	buf = init_magic(&buf_size, size);
 	if (!buf)
 		return (NULL);
 	buf = append_str(line, size, buf, 0);
-	if (!buf)
-		return (NULL);
-	line_count = ft_atoi(buf);
-	while (count_char(buf, '\n', buf_size) < line_count + 1)
+	while (size != 0)
 	{
 		size = read(STDIN_FILENO, line, _BUF);
 		buf = append_str(line, size, buf, buf_size);
 		buf_size += size;
-		if (!buf)
-			return (NULL);
 	}
 	return (buf);
 }
