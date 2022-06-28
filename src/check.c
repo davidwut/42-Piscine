@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:02:46 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 17:37:24 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 10:08:43 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	check(char *str)
 	char	wall;
 
 	if (check_header(str, &row_amount, &empty, &wall))
-	str += check_header(str, &row_amount, &empty, &wall);
+		str += check_header(str, &row_amount, &empty, &wall);
 	else
 		return (0);
 	if (row_amount != get_real_row_count(str))

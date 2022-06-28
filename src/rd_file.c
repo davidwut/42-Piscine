@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:01:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 18:04:27 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 10:17:50 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ char	*rd_file(char *filename)
 	size = get_file_size(filename);
 	if (size == -1)
 		return (NULL);
-	buf = malloc(sizeof(*buf) * size);
-	if (!buf)
-		return (NULL);
 	file = open(filename, O_RDONLY);
 	if (file == -1)
 		return (NULL);
+	buf = malloc(sizeof(*buf) * (size + 1));
+	if (!buf)
+		return (NULL);
 	size = read(file, buf, size);
+	buf[size] = 0;
 	return (buf);
 }
 
@@ -38,7 +39,7 @@ char	*rd_stdin(void)
 	int		size;
 	int		line_count;
 
-	buf = malloc(1);
+	buf = malloc(sizeof(*buf));
 	if (!buf)
 		return (NULL);
 	buf[0] = 0;

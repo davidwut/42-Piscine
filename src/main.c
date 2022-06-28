@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 18:38:37 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 10:19:28 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@
 #include "util2.c"
 */
 
-#include <stdio.h>
-
 void	do_the_thing(char *input)
 {
-	printf("---------\n");
-	print_grid_info(get_grid_info(input));
-	check()
 	if (input && check(input))
 		solve(input);
 	else
 		ft_putstr("map error\n");
+	if (input)
+	{
+		free(input);
+		input = NULL;
+	}
 }
 
 int	main(int argc, char **argv)
