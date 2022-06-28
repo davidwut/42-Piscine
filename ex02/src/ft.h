@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 18:41:31 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:15:02 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	together(int ac, char **av);
 void	apart(int ac, char **av);
 int		ft_atoi(char *str);
 int		file_size(char *filepath);
-int		display_last_nb(char *filepath, int bcount);
+int		display_last_nb(char *program_name, char *filepath, int bcount);
 void	display_stdin(char *name);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);

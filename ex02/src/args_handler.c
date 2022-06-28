@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 12:06:50 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 18:44:33 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:15:04 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,27 @@ void	together(int ac, char **av)
 		print_illegaloffset(av[0], av[1] + 2);
 	else
 	{
-		i =
+		i = 1;
+		while (++i < ac)
+		{
+			if (display_last_nb(av[0], av[i], bcount) == 0)
+				;
+		}
 	}
 }
 
 void	apart(int ac, char **av)
 {
-	(void) ac;
-	(void) av;
+	int	bcount;
+	int	i;
+
+	bcount = ft_atoi(av[2]);
+	if (bcount == -1)
+		print_illegaloffset(av[0], av[2]);
+	else
+	{
+		i = 2;
+		while (++i < ac)
+			display_last_nb(av[0],av[i], bcount);
+	}
 }

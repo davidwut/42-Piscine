@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:19:40 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 15:06:22 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:17:01 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	display_stdin(char *name)
 	}
 }
 
-int	display_last_nb(char *filepath, int bcount)
+int	display_last_nb(char *program_name, char *filepath, int bcount)
 {
 	int		fs;
 	char	*buf;
@@ -37,6 +37,10 @@ int	display_last_nb(char *filepath, int bcount)
 	fs = file_size(filepath);
 	buf = malloc(sizeof(*buf) * fs);
 	file = open(filepath, O_RDONLY);
+	if (errno == 21)
+		return (0);
+	if (file == -1)
+		print_err(program_name, filepath);
 	if (!buf || fs <= 0 || file == -1)
 		return (0);
 	read(file, buf, fs - bcount);
