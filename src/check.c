@@ -57,7 +57,7 @@ int	check_header(char *str, int *row_amount, char *empty, char *wall)
 }
 
 /* Checks the grid itself */
-int	check_grid(char *str, char empty, char wall, int row_amount)
+int	check_grid(char *str, char empty, char wall)
 {
 	int	current_row_count;
 	int	row_size;
@@ -98,5 +98,5 @@ int	check(char *str)
 		return (0);
 	//if (row_amount != get_real_row_count(str))
 	//	return (0);
-	return (check_grid(str, empty, wall, row_amount));
+	return (check_grid(str, empty, wall));
 }
