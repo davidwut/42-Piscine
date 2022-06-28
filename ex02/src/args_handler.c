@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 12:06:50 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 19:15:04 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:20:57 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	two_args(char **av)
 	{
 		if (ft_strlen(av[1]) == 2)
 			print_help(av[0]);
-		else if(ft_atoi(av[1] + 2) == -1)
+		else if (ft_atoi(av[1] + 2) == -1)
 			print_illegaloffset(av[0], av[1] + 2);
 		else
 			display_stdin(av[0]);
@@ -74,6 +74,6 @@ void	apart(int ac, char **av)
 	{
 		i = 2;
 		while (++i < ac)
-			display_last_nb(av[0],av[i], bcount);
+			display_last_nb(av[0], av[i], bcount);
 	}
 }
