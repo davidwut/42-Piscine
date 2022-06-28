@@ -24,8 +24,13 @@
 #include "util2.c"
 */
 
+#include <stdio.h>
+
 void	do_the_thing(char *input)
 {
+	printf("---------\n");
+	print_grid_info(get_grid_info(input));
+	check()
 	if (input && check(input))
 		solve(input);
 	else
