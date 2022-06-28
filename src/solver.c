@@ -75,7 +75,9 @@ void	print_final_grid(int **map, t_grid_info *info)
 	int	j;
 	int	row;
 	int	col;
+	int	use_color;
 
+	use_color = 0;
 	row = info->row_amount;
 	col = info->row_size;
 	i = -1;
@@ -83,7 +85,12 @@ void	print_final_grid(int **map, t_grid_info *info)
 	{
 		j = -1;
 		while (++j < col)
-			print_final_char(map[i][j], info);
+		{
+			if (use_color)
+				print_final_char_color(map[i][j], info);
+			else
+				print_final_char(map[i][j], info);	
+		}
 		ft_putchar('\n');
 	}
 }
