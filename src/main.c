@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 10:19:28 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:22:00 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,10 @@
 
 void	do_the_thing(char *input)
 {
-	//printf("received grid: \n");
-	//print_grid_info(get_grid_info(input));
-	//print_grid_from_str(get_grid(input, get_grid_info(input)), get_grid_info(input));
 	if (input && check(input))
 		solve(input);
 	else
-		ft_putstr("map error\n");
+		ft_putstr_fd("map error\n", STDERR_FILENO);
 	if (input)
 	{
 		free(input);

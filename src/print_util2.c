@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:28:58 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 15:44:57 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:21:21 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,9 @@ void	print_int_grid_from_str(int **grid, t_grid_info *grid_info)
 		j = 0;
 		i ++;
 	}
+}
+
+void	ft_putstr_fd(char *str, int fd)
+{
+	write(fd, str, strl(str));
 }

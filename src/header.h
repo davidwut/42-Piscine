@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:29:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 10:51:27 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:21:38 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int			**get_int_grid(char *str, t_grid_info *grid_info);
 void		ft_putchar(char c);
 void		ft_putnbr(int nb);
 void		ft_putstr(char *str);
+void		ft_putstr_fd(char *str, int fd);
 void		print_grid_info(t_grid_info *grid_info);
 void		clear_grid_header(char **str);
 void		print_grid(char **grid, int x_size, int y_size);
