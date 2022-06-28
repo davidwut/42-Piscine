@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 16:06:46 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 18:41:31 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 void	handle_args(int ac, char **av);
 void	two_args(char **av);
 void	n_args(int ac, char **av);
+void	together(int ac, char **av);
+void	apart(int ac, char **av);
 int		ft_atoi(char *str);
 int		file_size(char *filepath);
 int		display_last_nb(char *filepath, int bcount);
