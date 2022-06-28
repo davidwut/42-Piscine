@@ -6,11 +6,12 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:55:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 11:12:46 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:44:44 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdio.h>
 
 void	fill_map(int ***m, t_grid_info *info, int *k, int *l)
 {
@@ -48,6 +49,8 @@ void	fill_square(int ***map, int start_i, int start_j)
 	int	j;
 	int	len;
 
+	if (start_i == -1 || start_j == -1)
+		return ;
 	m = *map;
 	i = -1;
 	len = m[start_i][start_j];
@@ -110,6 +113,8 @@ void	solve(char *input)
 			free(grid_info);
 		return ;
 	}
+	biggest_col = -1;
+	biggest_row = -1;
 	fill_map(&map, grid_info, &biggest_col, &biggest_row);
 	fill_square(&map, biggest_col, biggest_row);
 	print_final_grid(map, grid_info);
