@@ -61,14 +61,12 @@ int	check_grid(char *str, char empty, char wall)
 {
 	int	current_row_count;
 	int	row_size;
-	int	char_count;
 
 	row_size = get_row_size(str, 0);
 	if (!row_size)
 		return (0);
 	current_row_count = 0;
-	char_count = 0;
-	while (str[0] && char_count < get_grid_char_amount(str))
+	while (str[0])
 	{
 		if (str[0] != '\n' && str[0] != empty && str[0] != wall)
 			return (0);
@@ -81,7 +79,6 @@ int	check_grid(char *str, char empty, char wall)
 		else
 			current_row_count ++;
 		str ++;
-		char_count ++;
 	}
 	return (current_row_count == 0);
 }
@@ -96,7 +93,7 @@ int	check(char *str)
 		str += check_header(str, &row_amount, &empty, &wall);
 	else
 		return (0);
-	//if (row_amount != get_real_row_count(str))
-	//	return (0);
+	if (row_amount != get_real_row_count(str))
+		return (0);
 	return (check_grid(str, empty, wall));
 }
