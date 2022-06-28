@@ -1,5 +1,5 @@
 SRC_PRE		:= src/
-SRC			:= main.c ft_putchar.c ft_putstr.c ft_display.c parse_arg.c ft_atoi.c err_msgs.c
+SRC			:= main.c printers.c ft_display.c ft_atoi.c err_msgs.c args_handler.c utils.c
 SRCS		:= $(addprefix $(SRC_PRE),$(SRC))
 OBJS		:= $(SRCS:%.c=%.o)
 NAME		:= ft_tail

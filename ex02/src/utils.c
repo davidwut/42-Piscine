@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 17:07:45 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/26 12:43:19 by dwuthric         ###   ########.fr       */
+/*   Created: 2022/06/28 15:32:36 by dwuthric          #+#    #+#             */
+/*   Updated: 2022/06/28 15:33:41 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
-	ft_putstr_fd(str, STDOUT_FILENO);
-}
+	int	c;
 
-void	ft_putstr_fd(char *str, int fd)
-{
-	while (*str)
-		write(fd, str++, 1);
-}
-
-void	ft_putnstr(char *str, int n)
-{
-	write(STDOUT_FILENO, str, n);
+	c = -1;
+	while (str[++c])
+		;
+	return (c);
 }

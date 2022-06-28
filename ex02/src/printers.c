@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   printers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:55:28 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/26 12:18:28 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:09:16 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,20 @@ void	ft_putchar_fd(char c, int fd)
 void	ft_putchar(char c)
 {
 	write(STDOUT_FILENO, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	ft_putstr_fd(str, STDOUT_FILENO);
+}
+
+void	ft_putstr_fd(char *str, int fd)
+{
+	while (*str)
+		write(fd, str++, 1);
+}
+
+void	ft_putnstr(char *str, int n)
+{
+	write(STDOUT_FILENO, str, n);
 }
