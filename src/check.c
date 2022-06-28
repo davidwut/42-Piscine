@@ -50,6 +50,8 @@ int	check_header(char *str, int *row_amount, char *empty, char *wall)
 		return (0);
 	if (!str[0] || (str[0] && str[0] == '\n'))
 		return (0);
+	if (!check_chars(*empty, *wall, str[0]))
+		return (0);
 	str ++;
 	if (!str[0] || (str[0] && str[0] != '\n'))
 		return (0);

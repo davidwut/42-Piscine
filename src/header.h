@@ -62,4 +62,5 @@ void		superfree(int ***map, t_grid_info **info);
 int			handle_edge_case(int **map, t_grid_info *info, int *k, int *l);
 char		*ft_strncat(char *dest, char *src, unsigned int nb);
 void		print_final_char_color(int x, t_grid_info *info);
+int			check_chars(char empty, char wall, char full);
 #endif
