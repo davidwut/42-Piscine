@@ -65,4 +65,5 @@ char		*ft_strncat(char *dest, char *src, unsigned int nb);
 void		print_final_char_color(int x, t_grid_info *info);
 int			check_chars(char empty, char wall, char full);
 int			ft_atoi_n(char *str, int n);
+int			line_len(char *str);
 #endif

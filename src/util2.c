@@ -68,3 +68,17 @@ int	ft_atoi_n(char *str, int n)
 	}
 	return (res);
 }
+
+/* Basically counts until a newline is reached */
+int	line_len(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[0] && str[0] != '\n')
+	{
+		i ++;
+		str ++;
+	}
+	return (i);
+}
