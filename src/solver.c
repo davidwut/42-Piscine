@@ -12,16 +12,14 @@
 
 #include "header.h"
 
-void	fill_map(int ***m, t_grid_info *info, int *k, int *l)
+void	fill_map(int ***m, t_grid_info *info, int (*co)[2], int max)
 {
 	int	i;
 	int	j;
-	int	max;
 
-	if (handle_edge_case(*m, info, k, l))
+	if (handle_edge_case(*m, info, &((*co)[0]), &((*co)[1])))
 		return ;
 	i = 0;
-	max = -1;
 	while (++i < info->row_amount)
 	{
 		j = 0;
@@ -33,12 +31,41 @@ void	fill_map(int ***m, t_grid_info *info, int *k, int *l)
 				if (max < (*m)[i][j])
 				{
 					max = (*m)[i][j];
-					*k = i;
-					*l = j;
+					(*co)[0] = i;
+					(*co)[1] = j;
 				}
 			}
 		}
 	}
+}
+
+int	fill_edges(int ***m, t_grid_info *info, int (*co)[2])
+{
+	int	i;
+	int	max;
+
+	max = -1;
+	i = -1;
+	while (++i < info->row_size && max == -1)
+	{
+		if ((*m)[0][i] != 0)
+		{
+			(*co)[0] = 0;
+			(*co)[1] = i;
+			max = 1;
+		}
+	}
+	i = -1;
+	while (++i < info->row_amount && max == -1)
+	{
+		if ((*m)[i][0] != 0)
+		{
+			(*co)[0] = i;
+			(*co)[1] = 0;
+			max = 1;
+		}
+	}
+	return (max);
 }
 
 void	fill_square(int ***map, int start_i, int start_j)
@@ -61,46 +88,12 @@ void	fill_square(int ***map, int start_i, int start_j)
 	}
 }
 
-void	print_final_char(int x, t_grid_info *info)
-{
-	if (x == -1)
-		ft_putchar(info->full_char);
-	else if (x == 0)
-		ft_putchar(info->wall_char);
-	else
-		ft_putchar(info->empty_char);
-}
-
-void	print_final_grid(int **map, t_grid_info *info)
-{
-	int	i;
-	int	j;
-	int	row;
-	int	col;
-
-	row = info->row_amount;
-	col = info->row_size;
-	i = -1;
-	while (++i < row)
-	{
-		j = -1;
-		while (++j < col)
-		{
-			if (USE_COLOR)
-				print_final_char_color(map[i][j], info);
-			else
-				print_final_char(map[i][j], info);
-		}
-		ft_putchar('\n');
-	}
-}
-
 void	solve(char *input)
 {
 	t_grid_info	*grid_info;
 	int			**map;
-	int			biggest_col;
-	int			biggest_row;
+	int			biggest_coords[2];
+	int			max;
 
 	grid_info = get_grid_info(input);
 	if (!grid_info)
@@ -112,10 +105,11 @@ void	solve(char *input)
 			free(grid_info);
 		return ;
 	}
-	biggest_col = -1;
-	biggest_row = -1;
-	fill_map(&map, grid_info, &biggest_col, &biggest_row);
-	fill_square(&map, biggest_col, biggest_row);
+	biggest_coords[0] = -1;
+	biggest_coords[1] = -1;
+	max = fill_edges(&map, grid_info, &biggest_coords);
+	fill_map(&map, grid_info, &biggest_coords, max);
+	fill_square(&map, biggest_coords[0], biggest_coords[1]);
 	print_final_grid(map, grid_info);
 	superfree(&map, &grid_info);
 }
