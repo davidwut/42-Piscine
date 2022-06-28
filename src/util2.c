@@ -52,3 +52,19 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	dest[destlen + i] = 0;
 	return (dest);
 }
+
+int	ft_atoi_n(char *str, int n)
+{
+	int	res;
+	int	i;
+
+	i = 0;
+	res = 0;
+	while (str[0] && str[0] >= '0' && str[0] <= '9' && i < n)
+	{
+		res = res * 10 + str[0] - '0';
+		str ++;
+		i ++;
+	}
+	return (res);
+}
