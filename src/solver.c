@@ -89,7 +89,7 @@ void	print_final_grid(int **map, t_grid_info *info)
 			if (use_color)
 				print_final_char_color(map[i][j], info);
 			else
-				print_final_char(map[i][j], info);	
+				print_final_char(map[i][j], info);
 		}
 		ft_putchar('\n');
 	}
