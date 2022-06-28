@@ -23,6 +23,8 @@
 # define CYA "\033[0;36m"
 # define NC "\033[0m"
 
+# define USE_COLOR 0
+
 typedef struct s_grid_info
 {
 	int		row_size;
