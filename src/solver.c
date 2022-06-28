@@ -6,12 +6,11 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:55:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 11:44:44 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:27:34 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-#include <stdio.h>
 
 void	fill_map(int ***m, t_grid_info *info, int *k, int *l)
 {

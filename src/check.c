@@ -6,11 +6,9 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:02:46 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/28 10:08:43 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:25:03 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include "header.h"
 

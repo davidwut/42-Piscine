@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   color_fun.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwikiera <jwikiera@student.42lausan>       +#+  +:+       +#+        */
+/*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 17:35:21 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 17:35:23 by jwikiera         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:25:11 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 #include "header.h"
 

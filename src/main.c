@@ -6,23 +6,11 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:37 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 13:02:12 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:24:43 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-/*
-#include "check.c"
-#include "parse.c"
-#include "parse2.c"
-#include "print_util.c"
-#include "print_util2.c"
-#include "rd_file.c"
-#include "solver_util.c"
-#include "solver.c"
-#include "util.c"
-#include "util2.c"
-*/
 
 void	do_the_thing(char *input)
 {
