@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 #include "header.h"
 
 void	clear_grid_header(char **str)
@@ -57,9 +59,9 @@ t_grid_info	*get_grid_info(char *str)
 	res = malloc(sizeof(res));
 	if (!res)
 		return (0);
-	res->row_amount = ft_atoi(str);
+	res->row_amount = ft_atoi_n(str, line_len(str) - 3);
 	res->row_size = get_row_size(str, 1);
-	str += int_char_size(ft_atoi(str));
+	str += line_len(str) - 3;
 	res->empty_char = str[0];
 	res->wall_char = str[1];
 	res->full_char = str[2];

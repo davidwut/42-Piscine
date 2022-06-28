@@ -40,7 +40,7 @@ int	get_wall(char **str, char *wall)
 /* Also modifies row_size, empty, and wall */
 int	check_header(char *str, int *row_amount, char *empty, char *wall)
 {
-	*row_amount = ft_atoi(str);
+	*row_amount = ft_atoi_n(str, line_len(str) - 3);
 	if (!*row_amount)
 		return (0);
 	str += int_char_size(*row_amount);
