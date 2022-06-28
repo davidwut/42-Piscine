@@ -1,5 +1,5 @@
 SRC_PRE		:= src/
-SRC			:= check.c parse.c parse2.c print_util.c print_util2.c rd_file.c util.c util2.c main.c solver.c solver_util.c freeer.c color_fun.c
+SRC			:= check.c parse.c parse2.c print_util.c print_util2.c rd_file.c util.c util2.c main.c solver.c solver_util.c freeer.c
 SRCS		:= $(addprefix $(SRC_PRE),$(SRC))
 OBJS		:= $(SRCS:%.c=%.o)
 NAME		:= bsq
@@ -7,12 +7,8 @@ NAME		:= bsq
 RM			:= rm -f
 CC			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
-CCOLOR		:= $(CFLAGS) -DCOLOR
 
 all:		$(NAME)
-
-color:		$(OBJS)
-			$(CC) $(CCOLOR) -o $(NAME) $(SRCS)
 
 .c.o:
 			$(CC) $(CFLAGS) -c $< -o $(<:%.c=%.o)
