@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:48:55 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/28 13:57:33 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:33:22 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_chars(char empty, char wall, char full)
 
 int	get_grid_char_amount(char *str)
 {
-	t_grid_info *grid_info;
+	t_grid_info	*grid_info;
 	int			char_amount;
 
 	grid_info = get_grid_info(str);
