@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:55:32 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/27 18:10:58 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:12:46 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,15 @@ void	solve(char *input)
 	int			biggest_row;
 
 	grid_info = get_grid_info(input);
+	if (!grid_info)
+		return ;
 	map = get_int_grid(input, grid_info);
+	if (!map)
+	{
+		if (grid_info)
+			free(grid_info);
+		return ;
+	}
 	fill_map(&map, grid_info, &biggest_col, &biggest_row);
 	fill_square(&map, biggest_col, biggest_row);
 	print_final_grid(map, grid_info);
