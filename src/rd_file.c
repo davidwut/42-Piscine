@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 17:01:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 10:17:50 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 10:57:16 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,22 @@ char	*rd_file(char *filename)
 		return (NULL);
 	size = read(file, buf, size);
 	buf[size] = 0;
+	close(file);
 	return (buf);
+}
+
+char	*init_magic(int *buf_size, int size)
+{
+	char	*res;
+
+	if (size == -1)
+		return (NULL);
+	res = malloc(1);
+	if (!res)
+		return (NULL);
+	res[0] = 0;
+	*buf_size = size;
+	return (res);
 }
 
 char	*rd_stdin(void)
@@ -38,23 +53,25 @@ char	*rd_stdin(void)
 	char	*buf;
 	int		size;
 	int		line_count;
+	int		buf_size;
 
-	buf = malloc(sizeof(*buf));
-	if (!buf)
-		return (NULL);
-	buf[0] = 0;
 	size = read(STDIN_FILENO, line, _BUF);
 	if (!('0' <= line[0] && line[0] <= '9'))
-	{
-		free(buf);
 		return (NULL);
-	}
-	buf = append_str(line, size, buf);
+	buf = init_magic(&buf_size, size);
+	if (!buf)
+		return (NULL);
+	buf = append_str(line, size, buf, 0);
+	if (!buf)
+		return (NULL);
 	line_count = ft_atoi(buf);
 	while (count_char(buf, '\n') < line_count + 1)
 	{
 		size = read(STDIN_FILENO, line, _BUF);
-		buf = append_str(line, size, buf);
+		buf = append_str(line, size, buf, buf_size);
+		buf_size += size;
+		if (!buf)
+			return (NULL);
 	}
 	return (buf);
 }

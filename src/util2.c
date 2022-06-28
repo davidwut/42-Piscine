@@ -6,32 +6,30 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:24:40 by jwikiera          #+#    #+#             */
-/*   Updated: 2022/06/27 18:04:52 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/28 10:47:51 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-char	*append_str(char str[_BUF], int size, char *buf)
+char	*append_str(char str[_BUF], int size, char *buf, int buf_size)
 {
 	char	*res;
 	int		i;
-	int		len;
 
-	len = strl(buf);
-	res = malloc(len + size + 1);
+	res = malloc(buf_size + size + 1);
 	if (!res)
 	{
 		free(buf);
 		return (NULL);
 	}
 	i = -1;
-	while (++i < len)
+	while (++i < buf_size)
 		res[i] = buf[i];
 	i = -1;
 	while (++i < size)
-		res[len + i] = str[i];
-	res[len + i + 1] = 0;
+		res[buf_size + i] = str[i];
+	res[buf_size + i + 1] = 0;
 	free(buf);
 	return (res);
 }
