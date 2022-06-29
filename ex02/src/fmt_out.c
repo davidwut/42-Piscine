@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err_msgs.c                                         :+:      :+:    :+:   */
+/*   fmt_out.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:13:44 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/29 11:00:14 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/29 11:06:06 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	print_illegaloffset(char *program_name, char *err)
 	ft_putstr_fd("\n", STDERR_FILENO);
 }
 
-void	display_header(char *name, int i, int ac)
+void	display_header(char *name, int i)
 {
-	if (i != 3 && ac > 4)
+	if (i != 3)
 		ft_putstr("\n");
 	ft_putstr("==> ");
 	ft_putstr(name);

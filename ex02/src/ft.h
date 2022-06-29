@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/29 10:57:41 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/29 11:06:13 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_atoi(char *str);
 int		file_size(char *filename);
 int		display_last_nb(int bcount, char *filename);
 void	display_stdin(char *name);
-void	display_header(char *name, int i, int ac);
+void	display_header(char *name, int i);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);

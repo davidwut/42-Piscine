@@ -6,35 +6,11 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:42:57 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/29 11:01:08 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/29 11:08:26 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
-
-void	handle_args(int ac, char **av, int arg)
-{
-	int	i;
-	int	file;
-
-	i = 2;
-	while (++i < ac)
-	{
-		file = open(av[i], O_RDONLY);
-		if (file < 0)
-		{
-			print_err(av[0], av[i]);
-			continue ;
-		}
-		else
-		{
-			if (ac > 4)
-				display_header(av[i], i, ac);
-			display_last_nb(arg, av[i]);
-			close (file);
-		}
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -53,4 +29,59 @@ int	main(int argc, char **argv)
 			handle_args(argc, argv, ft_atoi(argv[2]));
 	}
 	return (0);
+}
+
+void	handle_args(int ac, char **av, int arg)
+{
+	int	i;
+	int	file;
+
+	i = 2;
+	while (++i < ac)
+	{
+		file = open(av[i], O_RDONLY);
+		if (file >= 0)
+		{
+			close (file);
+			if (ac > 4)
+				display_header(av[i], i);
+			display_last_nb(arg, av[i]);
+		}
+		else
+			print_err(av[0], av[i]);
+	}
+}
+
+void	display_stdin(char *name)
+{
+	char	buf;
+
+	while (read(STDIN_FILENO, &buf, 1) != 0)
+	{
+		if (errno == 0)
+			(void) errno;
+		else
+		{
+			print_err(name, "stdin");
+			return ;
+		}
+	}
+}
+
+int	display_last_nb(int bcount, char *filename)
+{
+	int		fs;
+	char	*buf;
+	int		fd;
+
+	fs = file_size(filename);
+	buf = malloc(sizeof(*buf) * fs);
+	if (!buf || fs <= 0)
+		return (0);
+	fd = open(filename, O_RDONLY);
+	read(fd, buf, fs - bcount);
+	read(fd, buf, bcount);
+	ft_putnstr(buf, bcount);
+	close(fd);
+	return (1);
 }
