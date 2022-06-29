@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:14:18 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/29 15:57:17 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/29 19:25:58 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,15 @@ void	special_print(char c)
 		ft_putchar_non_printable(c);
 }
 
-void	print_formatted(char buf[16], int size)
+void	print_formatted(char *buf)
 {
 	int	i;
 
 	i = -1;
-	while (++i < size)
+	while (++i < 16)
 	{
 		special_print(buf[i]);
-		if (i != size - 1)
+		if (i != 16 - 1)
 			ft_putchar_fd(' ', 1);
 	}
 	while (i++ < 16)
@@ -75,44 +75,75 @@ void	print_formatted(char buf[16], int size)
 	ft_putchar_fd('\n', 1);
 }
 
-void	copy(char to[16], char from[16])
+int		ft_strcmp(char *a, char *b)
 {
 	int	i;
 
-	i = -1;
-	while (++i < 16)
-	{
-		if (from)
-			to[i] = from[i];
-		else
-			to[i] = 0;
-	}
+	i = 0;
+	while (i < 16 && a[i] == b[i - 16])
+		i++;
+	return (a[i] - b[i - 16]);
 }
 
-int		ft_strcmp(char a[16], char b[16])
+void	print_line(int offset, char *buf, int *repeat)
 {
-	while (*a == *b)
-	{
-		a++;
-		b++;
-	}
-	return (*a - *b);
-}
-
-void	print_line(int offset, char buf[16], int size, char last[16])
-{
-	if (ft_strcmp(buf, last) != 0)
-	{
-		print_offset(itoh(offset));
-		ft_putstr_fd(" ", 1);
-		print_formatted(buf, size);
-	}
-	else
+	if (*repeat)
 	{
 		ft_putstr_fd("*\n", 1);
 	}
+	else
+	{
+		print_offset(itoh(offset));
+		ft_putstr_fd(" ", 1);
+		print_formatted(buf + offset);
+		*repeat = 0;
+	}
+	*repeat = ft_strcmp(buf + offset, buf + offset - 16) == 0;
 }
 
+int	get_file_size(char *filepath)
+{
+	int		total_size;
+	int		size;
+	int		file;
+	char	buf[1024];
+
+	file = open(filepath, O_RDONLY);
+	total_size = 0;
+	size = read(file, buf, 1024);
+	while (size)
+	{
+		total_size += size;
+		size = read(file, buf, 1024);
+	}
+	return (total_size);
+}
+
+void	hxd(char *filepath)
+{
+	int		file;
+	int		size;
+	int		offset;
+	char	*buf;
+	int		repeat;
+
+	size = get_file_size(filepath);
+	buf = malloc(size);
+	file = open(filepath, O_RDONLY);
+	read(file, buf, size);
+	offset = 0;
+	repeat = 0;
+	while (offset < size)
+	{
+		print_line(offset, buf, &repeat);
+		offset += 16;
+	}
+	print_offset(itoh(offset - 7));
+	ft_putchar_fd('\n', 1);
+	close(file);
+}
+
+/*
 void	hxd(char *filepath)
 {
 	int		fd;
@@ -136,3 +167,4 @@ void	hxd(char *filepath)
 	ft_putchar_fd('\n', 1);
 	close(fd);
 }
+*/

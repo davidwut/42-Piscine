@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:58:12 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/29 15:57:08 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/29 19:04:33 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ void	special_print(char c);
 
 void	print_err(char *program_name, char *fd_name);
 void	print_offset(char *offset);
-void	print_formatted(char buf[16], int size);
+void	print_formatted(char *buf);
 char	*itoh(int offset);
 
 void	hxd(char *filepath);
-void	copy(char to[16], char from[16]);
 #endif
