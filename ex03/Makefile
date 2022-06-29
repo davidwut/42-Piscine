@@ -16,7 +16,8 @@ $(NAME):		$(OBJS)
 .c.o:
 				$(CC) $(CFLAGS) -c $< -o $(<:%.c=%.o)
 
-clean:			$(RM) $(OBJS)
+clean:
+				$(RM) $(OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
