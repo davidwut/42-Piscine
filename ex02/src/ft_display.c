@@ -6,11 +6,12 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:19:40 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 19:17:01 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:56:35 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
+#include <stdio.h>
 
 void	display_stdin(char *name)
 {
@@ -28,47 +29,20 @@ void	display_stdin(char *name)
 	}
 }
 
-int	display_last_nb(char *program_name, char *filepath, int bcount)
+int	display_last_nb(int bcount, char *filename)
 {
 	int		fs;
 	char	*buf;
-	int		file;
+	int		fd;
 
-	fs = file_size(filepath);
+	fs = file_size(filename);
 	buf = malloc(sizeof(*buf) * fs);
-	file = open(filepath, O_RDONLY);
-	if (errno == 21)
+	if (!buf || fs <= 0)
 		return (0);
-	if (file == -1)
-		print_err(program_name, filepath);
-	if (!buf || fs <= 0 || file == -1)
-		return (0);
-	read(file, buf, fs - bcount);
-	read(file, buf, bcount);
-	close(file);
+	fd = open(filename, O_RDONLY);
+	read(fd, buf, fs - bcount);
+	read(fd, buf, bcount);
 	ft_putnstr(buf, bcount);
+	close(fd);
 	return (1);
-}
-
-int	file_size(char *filepath)
-{
-	int		size;
-	int		total_size;
-	int		file;
-	char	buf[_BUF];
-
-	total_size = 0;
-	file = open(filepath, O_RDONLY);
-	if (file != -1)
-	{
-		size = read(file, buf, _BUF);
-		while (size != 0)
-		{
-			total_size += size;
-			size = read(file, buf, _BUF);
-		}
-		close(file);
-		return (total_size);
-	}
-	return (-1);
 }

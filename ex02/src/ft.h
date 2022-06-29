@@ -6,7 +6,7 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:27:51 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/28 19:15:02 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:57:41 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,12 @@
 
 # define _BUF 4096
 
-void	handle_args(int ac, char **av);
-void	two_args(char **av);
-void	n_args(int ac, char **av);
-void	together(int ac, char **av);
-void	apart(int ac, char **av);
+void	handle_args(int ac, char **av, int arg);
 int		ft_atoi(char *str);
-int		file_size(char *filepath);
-int		display_last_nb(char *program_name, char *filepath, int bcount);
+int		file_size(char *filename);
+int		display_last_nb(int bcount, char *filename);
 void	display_stdin(char *name);
+void	display_header(char *name, int i, int ac);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -39,6 +36,5 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putnstr(char *str, int n);
 void	print_err(char *program_name, char *fd_name);
 void	print_illegaloffset(char *program_name, char *err);
-void	print_help(char *program_name);
 int		ft_strlen(char *str);
 #endif
