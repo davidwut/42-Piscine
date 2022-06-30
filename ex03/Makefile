@@ -1,5 +1,5 @@
 SRCS_PRE		:= src/
-SRC				:= main.c utils.c fmt_out.c dumper.c
+SRC				:= main.c utils.c utils2.c fmt_out.c dumper.c
 SRCS			:= $(addprefix $(SRCS_PRE),$(SRC))
 OBJS			:= $(SRCS:%.c=%.o)
 NAME			:= ft_hexdump

@@ -6,13 +6,13 @@
 /*   By: dwuthric <dwuthric@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:58:04 by dwuthric          #+#    #+#             */
-/*   Updated: 2022/06/29 14:36:29 by dwuthric         ###   ########.fr       */
+/*   Updated: 2022/06/30 12:16:38 by dwuthric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int	i;
 	int	fd;
