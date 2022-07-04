@@ -1,0 +1,10 @@
+*
+!*/
+!*.*
+!Makefile
+.DS_STORE
+*.o*
+tester*
+main*
+!ex05/main.c
+*dSYM*
