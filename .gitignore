@@ -1,0 +1,11 @@
+*
+!*/
+!*.*
+!Makefile
+.DS_STORE
+*.o*
+tester*
+main*
+*dSYM*
+libft.a
+srcs
