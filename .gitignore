@@ -1,0 +1,9 @@
+*
+!*/
+!*.*
+.DS_STORE
+*.o*
+tester*
+main*
+*dSYM*
+ft_stock_str.h
